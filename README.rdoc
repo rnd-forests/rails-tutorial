@@ -4,3 +4,4 @@
 * rake db:migrate
 * rake db:seed
 * Deployed app on Heroku: https://rails-blogg.herokuapp.com/
+* Sample user: username -> ngocvinh.nnv@gmail.com | password -> 123456789
