@@ -8,11 +8,10 @@
                 <span class="glyphicon glyphicon-pencil" style="padding-right: 10px;"></span>CREATE ARTICLE
             </button>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 col-md-offset-2">
             <%= render 'partials/article_form' %>
             <%= render 'partials/feed' %>
         </div>
-        <div class="col-md-4"><%= render 'layouts/sidebar' %></div>
     </div>
 <% else %>
     <% content_for :title, 'Home' %>

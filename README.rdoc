@@ -3,3 +3,4 @@
 
 * rake db:migrate
 * rake db:seed
+* Deployed app on Heroku: https://rails-blogg.herokuapp.com/
