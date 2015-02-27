@@ -1,0 +1,37 @@
+<% content_for(:title, @article.title) %>
+<div class="row">
+    <div class="col-md-3"><%= render 'users/user_sidebar' %></div>
+    <div class="col-md-9">
+        <div class="article-wrapper">
+            <div class="well">
+                <h2 class="article-title"><%= @article.title %></h2>
+                <p style="font-size: 13px;">Published at: <%= @article.created_at.strftime('%H:%M:%S - %b %d, %Y') %> |
+                    Last update: <%= @article.updated_at.strftime('%H:%M:%S - %b %d, %Y') %></p>
+                <% unless @article.tags.to_a.empty? %>
+                    <div class="article-tags">
+                        <span class="glyphicon glyphicon-tags"></span>
+                        <% @article.tags.each do |tag| %>
+                            <a href="<%= tag_path(tag) %>"><span class="badge"><%= tag.name %></span></a>
+                        <% end %>
+                    </div>
+                <% end %>
+
+                <% if current_user?(@article.user) %>
+                    <div class="text-center">
+                        <div class="btn-group" role="group">
+                            <%= link_to simple_format('', {class: 'glyphicon glyphicon-edit'}, {wrapper_tag: 'span'}), edit_article_path(@article),
+                                        class: 'btn btn-warning btn-sm', title: 'Update this article' %>
+                            <%= link_to simple_format('', {class: 'glyphicon glyphicon-trash'}, {wrapper_tag: 'span'}), @article, method: :delete,
+                                        data: { confirm: 'Do you want to delete this article?' }, class: 'btn btn-danger btn-sm', title: 'Delete this article' %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+
+            <div class="well">
+                <%= image_tag(@article.picture.url, class: 'img-rounded article-picture') if @article.picture? %>
+                <p class="text-left"><%= @article.content %></p>
+            </div>
+        </div>
+    </div>
+</div>

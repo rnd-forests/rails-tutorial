@@ -1,0 +1,33 @@
+<div class="sidebar">
+    <div class="sidebar-wrapper">
+        <p class="sidebar-header"><span class="glyphicon glyphicon-ok"></span>Latest Articles</p>
+        <ul class="list-group">
+            <% newest_articles.each do |article| %>
+                <li class="list-group-item">
+                    <%= link_to article.title, article, class: 'list-group-item-heading' %>
+                    <p class="list-group-item-text"><span class="glyphicon glyphicon-time"></span><%= time_ago_in_words(article.created_at) %> ago</p>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+    <div class="sidebar-wrapper">
+        <p class="sidebar-header"><span class="glyphicon glyphicon-ok"></span>Top 10 creators</p>
+        <ul class="list-group">
+            <% top_creators.each do |user| %>
+                <li class="list-group-item">
+                    <%= link_to user.name, user, class: 'article-author' %> with
+                    <%= link_to pluralize(user.articles.count, 'article'), articles_user_path(user), class: 'sidebar-counter' %>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+
+    <div class="sidebar-wrapper">
+        <p class="sidebar-header"><span class="glyphicon glyphicon-ok"></span>Tag Cloud</p>
+        <div class="tag-cloud">
+            <% Tag.all.each do |tag| %>
+                <%= link_to tag.name, tag_path(tag), class: 'tag-cloud-item' %>
+            <% end %>
+        </div>
+    </div>
+</div>

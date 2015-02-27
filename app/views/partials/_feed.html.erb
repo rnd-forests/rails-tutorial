@@ -1,0 +1,6 @@
+<% if @feed_items.any? %>
+	<div class="posts-wrapper">
+	    <%= render @feed_items %>
+        <div class="text-center"><%= will_paginate @feed_items, previous_label: '&laquo;', next_label: '&raquo;' %></div>
+    </div>
+<% end %>

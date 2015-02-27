@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-10">
+        <div class="thumbnail">
+            <%= user_gravatar(@user, size: 220) %>
+            <div class="caption">
+                <h3>
+                    <%= link_to @user.name, @user, class: 'user-name' %>
+                    <% if @user.admin? %>
+                        <p style="padding-top: 5px;"><span class="label label-danger">Administrator</span></p>
+                    <% end %>
+                </h3>
+                <ul>
+                    <li><span class="glyphicon glyphicon-envelope"></span><%= @user.email %></li>
+                    <li><span class="glyphicon glyphicon-time"></span>Joined in <%= @user.created_at.strftime('%B %d, %Y') %></li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="<%= articles_user_path(@user) %>">
+                            <span class="glyphicon glyphicon-book"></span>
+                            <%= pluralize(@user.articles.count, 'article') %> published
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="<%= followers_user_path(@user) %>">
+                            <span class="glyphicon glyphicon-heart"></span>
+                            <span id="followers"><%= pluralize(@user.followers.count, 'follower') %></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%= following_user_path(@user) %>">
+                            <span class="glyphicon glyphicon-heart-empty"></span>
+                            <span id="following"><%= @user.following.count %> following</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+.users-list {
+    .user-block {
+        text-align: center;
+        margin-bottom: 2em;
+
+        h4 a {
+            color: darken(rgb(231, 76, 60), 10%);
+
+            &:hover {
+                color: #5fcf80;
+            }
+        }
+
+        h5 {
+            color: #8c989e;
+        }
+    }
+}
+
+.user-form {
+    button[type=submit] {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border-radius: 0;
+    }
+}
+
+#follow_form {
+    text-align: center;
+    margin-bottom: 10px;
+}

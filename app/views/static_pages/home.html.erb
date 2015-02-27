@@ -1,0 +1,27 @@
+<% if logged_in? %>
+    <% content_for :title, 'Articles Feed' %>
+    <div class="row">
+        <h2 class="section-title"><span class="section-division">+</span>Articles Feed</h2>
+        <div class="text-center">
+            <button type="button" class="btn btn-danger" style="margin-bottom: 15px; outline: none" data-backdrop="static"
+                    data-toggle="modal" data-target="#article-creation-form" title="Create new article">
+                <span class="glyphicon glyphicon-pencil" style="padding-right: 10px;"></span>CREATE ARTICLE
+            </button>
+        </div>
+        <div class="col-md-8">
+            <%= render 'partials/article_form' %>
+            <%= render 'partials/feed' %>
+        </div>
+        <div class="col-md-4"><%= render 'layouts/sidebar' %></div>
+    </div>
+<% else %>
+    <% content_for :title, 'Home' %>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron home-welcome">
+                <h2 class="text-center">"Simplicity is the ultimate sophistication."</h2>
+                <%= link_to image_tag('ruby-logo.svg', alt: 'Ruby logo') %>
+            </div>
+        </div>
+    </div>
+<% end %>

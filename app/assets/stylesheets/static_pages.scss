@@ -1,0 +1,35 @@
+.static-pages {
+	color: #8c989e;
+
+	h2 {
+		color: #fff;
+	}
+
+	a {
+		color: #2ba6cb;
+	}
+}
+
+
+/* Homepage */
+.jumbotron.home-welcome {
+    padding: 0;
+    border-radius: 0;
+}
+
+.home-welcome {
+    background-color: transparent;
+
+    h2 {
+        color: #8c989e;
+        padding: 20px 0;
+        margin-bottom: 0;
+    }
+
+    img {
+        width: 35%;
+        height: auto;
+        display: block;
+        margin: auto;
+    }
+}

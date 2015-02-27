@@ -1,0 +1,14 @@
+<% content_for :title, @tag.name.capitalize %>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h3 class="text-center tag-header"><span class="glyphicon glyphicon-tag"></span> <%= @tag.name %></h3>
+        <% if @articles.empty? %>
+            <h4 class="text-warning text-center">This tag has no associated articles.</h4>
+        <% else %>
+            <div class="posts-wrapper">
+                <%= render @articles %>
+                <div class="text-center"><%= will_paginate @articles, previous_label: '&laquo;', next_label: '&raquo;' %></div>
+            </div>
+        <% end %>
+    </div>
+</div>

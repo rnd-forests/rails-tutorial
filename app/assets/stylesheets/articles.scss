@@ -1,0 +1,43 @@
+.article-wrapper {
+    .well {
+        background-color: #ffffff;
+    }
+}
+
+.article-title {
+    color: #e74c3c;
+}
+
+.article-author {
+    color: #5fcf80;
+    font-size: 16px;
+
+    &:hover {
+        color: darken(#5fcf80, 15%);
+    }
+}
+
+.article-picture {
+    margin: 20px 0;
+}
+
+.article-tags {
+    margin: 10px 0;
+
+    .glyphicon {
+        padding-right: 10px;
+    }
+
+    .badge {
+        background-color: rgba(46, 204, 113, .5);
+        color: #333333;
+        font-weight: normal;
+    }
+}
+
+.article-update-form {
+    button[type=submit] {
+        width: 100%;
+        border-radius: 0;
+    }
+}

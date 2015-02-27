@@ -1,0 +1,14 @@
+<% content_for :title, 'Tags' %>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="list-group">
+            <a class="list-group-item active"><span class="glyphicon glyphicon-tags"></span></a>
+            <% @tags.each do |tag| %>
+                <a href="<%= tag_path(tag) %>" class="list-group-item">
+                    <span class="badge"><%= pluralize(tag.articles.count, 'article') %></span>
+                    <%= tag.name %>
+                </a>
+            <% end %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<% content_for(:title, @title) %>
+<div class="row">
+    <div class="col-md-3"><%= render 'user_sidebar' %></div>
+    <div class="col-md-9">
+        <div class="users-list">
+            <% if @users.any? %>
+                <% @users.in_groups_of(3, false).each do |users| %>
+                    <div class="row">
+                        <% users.each do |user| %>
+                            <div class="col-md-4 user-block">
+                                <%= render user %>
+                            </div>
+                        <% end %>
+                    </div>
+                <% end %>
+                <div class="text-center"><%= will_paginate @users, previous_label: '&laquo;', next_label: '&raquo;' %></div>
+            <% else %>
+                <div class="well"><%= @user.name %> has no <%= @title.downcase %></div>
+            <% end %>
+        </div>
+    </div>
+</div>

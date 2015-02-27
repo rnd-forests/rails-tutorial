@@ -1,0 +1,17 @@
+<% content_for :title, @user.name + ' - Articles' %>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="text-center">
+            <div class="list-group">
+                <a class="list-group-item active">
+                    <h4 class="list-group-item-heading" style="color: #ffffff">Articles of <%= @user.name %></h4>
+                    <h6 class="list-group-item-text" style="color: #111111"><%= pluralize(@articles.count, 'article') %> -
+                        Last publication : <%= time_ago_in_words(@articles.first.created_at) %> ago</h6>
+                </a>
+                <% @articles.each do |article| %>
+                    <%= link_to article.title, article, class: 'list-group-item' %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
