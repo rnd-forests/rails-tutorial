@@ -5,3 +5,4 @@
 * rake db:seed
 * Deployed app on Heroku: https://rails-blogg.herokuapp.com/
 * Sample user: username -> ngocvinh.nnv@gmail.com | password -> 123456789
+* We do not use a real email system, so it not possible for some funtionalities such as: account activation, password reset, etc. to work properly.
