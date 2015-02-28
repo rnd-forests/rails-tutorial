@@ -1,5 +1,6 @@
 <h2 class="section-title"><span class="section-division">+</span>
     Search Results for <span class="search-keyword"><%= @keyword %></span>
+    (<%= pluralize(@articles.count, 'article') %> found)
 </h2>
 <% if @articles.any? %>
     <div class="row">
