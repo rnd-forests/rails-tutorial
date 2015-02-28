@@ -2,31 +2,27 @@ class ArticlesController < ApplicationController
     before_action :logged_in_user, only: [:create, :destroy]
     before_action :correct_user, only: [:edit, :update, :destroy]
 
-    def new
-        @article = Article.new
+    def show
+        @article = Article.find(params[:id])
+        @user = User.find(@article.user_id)
     end
 
-    def create
-        @article = current_session_user.articles.build(article_params)
-        if @article.save
-            if @article.tags.to_a.empty?
-                @article.attach_tag(Tag.find_by_name('general'))
-            end
-            flash[:success] = 'Your article has been created.'
-            redirect_to root_url
-        else
-            @feed_items = []
-            render 'static_pages/home'
-        end
+    def new
+        @article = Article.new
     end
 
     def edit
         @article = Article.find(params[:id])
     end
 
-    def show
-        @article = Article.find(params[:id])
-        @user = User.find(@article.user_id)
+    def create
+        @article = current_session_user.articles.build(article_params)
+        if @article.save
+            flash[:success] = 'Your article has been created.'
+            redirect_to root_url
+        else
+            render :new
+        end
     end
 
     def update

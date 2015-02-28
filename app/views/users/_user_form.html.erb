@@ -1,18 +1,8 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3 user-form">
         <%= form_for(@user) do |f| %>
-            <% if @user.errors.any? %>
-                <div class="alert alert-danger" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <ul>
-                        <% @user.errors.full_messages.each do |message| %>
-                            <li><%= message %></li>
-                        <% end %>
-                    </ul>
-                </div>
-            <% end %>
+            <%= render 'partials/error_messages', object: f.object %>
+
             <% unless logged_in? %><h1 class="form-heading">Sign Up</h1><% end %>
             <div class="form-group">
                 <%= f.label :name, class: 'control-label' %>
