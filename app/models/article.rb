@@ -30,7 +30,7 @@ class Article < ActiveRecord::Base
     end
 
     def self.search(params)
-        where('LOWER(title) LIKE ?', "%#{params[:keyword].downcase}%").paginate(page: params[:page], per_page: 5)
+        where('LOWER(title) LIKE ?', "%#{params[:keyword].downcase.strip}%").paginate(page: params[:page], per_page: 5)
     end
 
     def to_param
