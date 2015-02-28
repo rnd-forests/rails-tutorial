@@ -1,24 +1,4 @@
 <% content_for :title, 'Update article' %>
+<% content_for :article_form_button, 'Update your article' %>
 <h2 class="section-title"><span class="section-division">+</span>Update your article</h2>
-<div class="row">
-    <div class="col-md-8 col-md-offset-2 article-update-form">
-        <%= form_for(@article, html: { multipart: true }) do |f| %>
-            <%= render 'partials/error_messages', object: f.object %>
-
-            <div class="form-group">
-                <%= f.label :title, class: 'control-label' %>
-                <%= f.text_field :title, class: 'form-control input-lg', placeholder: 'article title' %>
-            </div>
-            <div class="form-group">
-                <%= f.label :content, class: 'control-label' %>
-                <%= f.text_area :content, class: 'form-control', rows: 6, placeholder: 'article content' %>
-            </div>
-            <div class="form-group">
-                <%= f.label :picture, class: 'control-label' %>
-                <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-                <p class="help-block">Choose your picture to upload</p>
-            </div>
-            <button type="submit" class="btn btn-success btn-lg">Update your article</button>
-        <% end %>
-    </div>
-</div>
+<%= render 'article_form' %>

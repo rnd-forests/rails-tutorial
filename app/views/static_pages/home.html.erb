@@ -3,13 +3,11 @@
     <div class="row">
         <h2 class="section-title"><span class="section-division">+</span>Articles Feed</h2>
         <div class="text-center">
-            <button type="button" class="btn btn-danger" style="margin-bottom: 15px; outline: none" data-backdrop="static"
-                    data-toggle="modal" data-target="#article-creation-form" title="Create new article">
+            <a href="<%= new_article_path %>" class="btn btn-primary">
                 <span class="glyphicon glyphicon-pencil" style="padding-right: 10px;"></span>CREATE ARTICLE
-            </button>
+            </a>
         </div>
         <div class="col-md-8">
-            <%= render 'partials/article_form' %>
             <%= render 'partials/feed' %>
         </div>
         <div class="col-md-4"><%= render 'layouts/sidebar' %></div>

@@ -38,7 +38,7 @@
                             <p class="post-timer"><span class="glyphicon glyphicon-time"></span>
                                 Last Update: <%= article.updated_at.strftime('%H:%M:%S - %b %d, %Y') %>
                             </p>
-                            <%= image_tag(article.picture.url, class: 'img-rounded article-picture') if article.picture? %>
+                            <%= image_tag(article.picture.url, class: 'article-picture') if article.picture? %>
                             <p><%= truncate(article.content, length: 400) %></p>
                         </div>
                     </div>

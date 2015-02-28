@@ -20,9 +20,8 @@ class Article < ActiveRecord::Base
     end
 
     def tag_list=(names)
-        names.each do |tag_name|
-            tag = Tag.where(name: tag_name)
-            self.tags << tag
+        self.tags = names.split(',').map do |name|
+            Tag.where(name: name.strip).first_or_create!
         end
     end
 
