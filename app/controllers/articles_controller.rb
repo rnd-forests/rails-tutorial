@@ -40,6 +40,11 @@ class ArticlesController < ApplicationController
         redirect_to user_path(@article.user) || root_url
     end
 
+    def search
+        @keyword = params[:keyword]
+        @articles = Article.search(params)
+    end
+
 
     private
     def article_params

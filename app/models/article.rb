@@ -29,6 +29,10 @@ class Article < ActiveRecord::Base
         self.tags
     end
 
+    def self.search(params)
+        where('title LIKE ?', "%#{params[:keyword]}%").paginate(page: params[:page], per_page: 5)
+    end
+
     def to_param
         "#{id}-#{title.parameterize}"
     end

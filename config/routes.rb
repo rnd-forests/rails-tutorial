@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'signin'     => 'sessions#new'
     post 'signin'    => 'sessions#create'
     delete 'logout'  => 'sessions#destroy'
+    get 'search'    => 'articles#search'
 
     resources :users do
         member do

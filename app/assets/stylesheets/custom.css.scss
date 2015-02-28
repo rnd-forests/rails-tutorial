@@ -488,3 +488,25 @@ input[type=file] {
     border-radius: 0;
     box-shadow: none;
 }
+
+
+/* Search form */
+#search-form {
+    margin: 10px 0;
+
+    .form-control {
+        color: #384047;
+        font-size: 16px;
+        border: 1px solid #dce8ed;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+.search-keyword {
+    color: rgb(231, 76, 60);
+}
+
+#search-alert {
+    margin-bottom: 20px;
+}
