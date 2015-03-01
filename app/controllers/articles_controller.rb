@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
         if @article.save
             params[:article][:tag_list].each do |tag_name|
                 unless tag_name.empty?
-                    ArticleTagRelationship.create!(article_id: @article.id, tag_id: Tag.find_by_name(tag_name).id)
+                    @article.attach_tag(Tag.find_by_name(tag_name))
                 end
             end
             if @article.tags.empty?
