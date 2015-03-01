@@ -16,17 +16,20 @@
 body {
     font-family: "Source Sans Pro Regular", sans-serif;
     font-size: 16px;
-    background: #ffffff;
+    background-color: #ffffff;
     color: #333;
     padding-top: 60px;
     overflow-y: scroll;
 }
 
 a {
+    @include transition(all .5s ease);
+
     &:hover, &:active, &:focus {
         text-decoration: none;
     }
 }
+
 
 /* Twitter Bootstrap customizations */
 .form-group {
@@ -46,7 +49,7 @@ a {
         border: 2px solid #dce8ed;
         border-radius: 0;
         box-shadow: none;
-        transition: all .5s ease;
+        @include transition(all .5s ease);
 
         &:focus {
             background: #fff;
@@ -88,6 +91,7 @@ a {
         list-style: none;
         font-size: 15px;
         margin-bottom: 5px;
+
         span {
             padding-right: 5px;
         }
@@ -235,6 +239,12 @@ a {
     }
 }
 
+.tooltip {
+    .tooltip-inner {
+        width: 150px;
+    }
+}
+
 /*--------------------------------------------------------------------*/
 
 /* Navigation */
@@ -319,17 +329,11 @@ a {
 /* Articles Wrapper */
 .posts-wrapper {
     .media {
-        margin-bottom: 60px;
+        margin-bottom: 25px;
+        padding-bottom: 5px;
+        border-bottom: 1px dashed #eaeaea;
 
         .media-heading {
-            .article-title {
-                color: rgb(231, 76, 60);
-
-                &:hover, &:focus {
-                    color: darken(rgb(231, 76, 60), 15%)
-                }
-            }
-
             span {
                 font-size: 14px;
                 padding: 0 5px;
@@ -346,12 +350,12 @@ a {
         }
 
         .post-content {
-            color: #8c989e;
+            color: darken(#8c989e, 20%);
             line-height: 1.8;
         }
 
         .dropdown-toggle {
-            color: #111111;
+            color: #666666;
             background-color: transparent;
             border: none;
         }
@@ -384,6 +388,8 @@ input[type=file] {
     color: #8c989e;
 }
 
+
+/* Sidebar */
 .sidebar {
     padding-left: 15px;
 
@@ -407,14 +413,15 @@ input[type=file] {
             padding: 10px 15px;
 
             .tag-cloud-item {
+                font-size: 13px;
                 float: left;
                 padding: 5px 10px;
                 margin-right: 5px;
-                margin-bottom: 20px;
+                margin-bottom: 5px;
                 color: #111111;
                 background-color: #dff0d8;
                 border-radius: 4px;
-                transition: all .5s ease;
+                @include transition(all .5s ease);
 
                 &:hover, &:active {
                     background-color: darken(#dff0d8, 25%);
@@ -467,7 +474,7 @@ input[type=file] {
         border-radius: 0;
         box-shadow: none;
         border: 1px solid transparent;
-        transition: all .5s ease;
+        @include transition(all .5s ease);
     }
 
     .select2-search-choice {
@@ -476,7 +483,7 @@ input[type=file] {
 }
 
 .select2-container-multi.select2-container-active .select2-choices {
-    transition: all .5s ease;
+    @include transition(all .5s ease);
     box-shadow: none;
     border-color: transparent;
     background: #ffffff;
@@ -492,7 +499,7 @@ input[type=file] {
 
 /* Search form */
 #search-form {
-    margin: 10px 0;
+    margin-bottom: 10px;
 
     .form-control {
         color: #384047;
@@ -509,4 +516,16 @@ input[type=file] {
 
 #search-alert {
     margin: 15px auto;
+}
+
+
+/* Media queries */
+@media (max-width: 970px) {
+    .user-sidebar {
+        text-align: center;
+
+        .thumbnail img {
+            margin: auto;
+        }
+    }
 }

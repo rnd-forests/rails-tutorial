@@ -1,0 +1,10 @@
+<% unless object.tags.to_a.empty? %>
+    <div class="article-tags">
+        <ol class="breadcrumb">
+            <li><span class="glyphicon glyphicon-tags"></span></li>
+            <% object.tags.each do |tag| %>
+                <li><a href="<%= tag_path(tag) %>"><%= tag.name %></a></li>
+            <% end %>
+        </ol>
+    </div>
+<% end %>

@@ -7,15 +7,7 @@
                 <h2 class="article-title"><%= @article.title %></h2>
                 <p style="font-size: 13px;">Published at: <%= @article.created_at.strftime('%H:%M:%S - %b %d, %Y') %> |
                     Last update: <%= @article.updated_at.strftime('%H:%M:%S - %b %d, %Y') %></p>
-                <% unless @article.tags.to_a.empty? %>
-                    <div class="article-tags">
-                        <span class="glyphicon glyphicon-tags"></span>
-                        <% @article.tags.each do |tag| %>
-                            <a href="<%= tag_path(tag) %>"><span class="badge"><%= tag.name %></span></a>
-                        <% end %>
-                    </div>
-                <% end %>
-
+                <%= render 'partials/tags', object: @article %>
                 <% if current_user?(@article.user) %>
                     <div class="text-center">
                         <div class="btn-group" role="group">
@@ -27,7 +19,6 @@
                     </div>
                 <% end %>
             </div>
-
             <div class="well">
                 <%= image_tag(@article.picture.url, class: 'article-picture') if @article.picture? %>
                 <p class="text-left"><%= @article.content %></p>

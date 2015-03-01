@@ -2,17 +2,8 @@
     <% content_for :title, 'Articles Feed' %>
     <div class="row">
         <h2 class="section-title"><span class="section-division">+</span>Articles Feed</h2>
-        <div class="text-center">
-            <a href="<%= new_article_path %>" class="btn btn-primary">
-                <span class="glyphicon glyphicon-pencil" style="padding-right: 10px;"></span>CREATE ARTICLE
-            </a>
-        </div>
-        <div id="search-form">
-            <%= render 'partials/search_form' %>
-        </div>
-        <div class="col-md-8">
-            <%= render 'partials/feed' %>
-        </div>
+        <div id="search-form"><%= render 'partials/search_form' %></div>
+        <div class="col-md-8"><%= render 'partials/feed' %></div>
         <div class="col-md-4"><%= render 'layouts/sidebar' %></div>
     </div>
 <% else %>

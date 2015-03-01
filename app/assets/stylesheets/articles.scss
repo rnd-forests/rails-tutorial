@@ -1,11 +1,17 @@
 .article-wrapper {
     .well {
         background-color: #ffffff;
+        padding: 0;
     }
 }
 
 .article-title {
-    color: #e74c3c;
+    color: #111111;
+    text-shadow: 0 1px 1px #eaeaea;
+
+    &:hover {
+        color: #5fcf80;
+    }
 }
 
 .article-author {
@@ -28,10 +34,11 @@
         padding-right: 10px;
     }
 
-    .badge {
-        background-color: rgba(46, 204, 113, .5);
-        color: #333333;
-        font-weight: normal;
+    .breadcrumb {
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
+        margin-bottom: 0;
     }
 }
 
