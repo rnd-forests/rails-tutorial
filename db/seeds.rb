@@ -36,7 +36,7 @@ followers1.each { |follower| follower.follow(user1) }
 followers2.each { |follower| follower.follow(user2) }
 followers3.each { |follower| follower.follow(user3) }
 
-tags = %w(general personal social technology creative gaming programming)
+tags = %w(general java ruby python scala perl pascal php javascript xml)
 tags.each do |tag|
     Tag.create!(name: tag)
 end

@@ -18,6 +18,14 @@ class ArticlesController < ApplicationController
     def create
         @article = current_session_user.articles.build(article_params)
         if @article.save
+            params[:article][:tag_list].each do |tag_name|
+                unless tag_name.empty?
+                    ArticleTagRelationship.create!(article_id: @article.id, tag_id: Tag.find_by_name(tag_name).id)
+                end
+            end
+            if @article.tags.empty?
+                @article.attach_tag(Tag.find_by_name('general'))
+            end
             flash[:success] = 'Your article has been created.'
             redirect_to root_url
         else

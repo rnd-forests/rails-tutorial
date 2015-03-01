@@ -13,7 +13,7 @@
             </div>
             <div class="form-group">
                 <%= f.label :tag_list, class: 'control-label' %>
-                <%= f.select :tag_list, Tag.all.collect { |t| [t.name, t.name] }, {},
+                <%= f.select :tag_list, Tag.all.collect { |t| [t.name, t.name] }, {selected: 'general'},
                              {id: 'tags-list-selection', class: 'form-control', multiple: true} %>
             </div>
             <div class="form-group">

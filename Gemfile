@@ -31,7 +31,7 @@ gem 'rack-timeout', '~> 0.2.0'
 gem 'capistrano-rails', group: :development
 
 group :development, :test do
-	gem 'sqlite3'
+	  gem 'sqlite3'
     gem 'byebug'
     gem 'web-console', '~> 2.0'
     gem 'spring'

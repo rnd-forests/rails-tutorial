@@ -19,12 +19,6 @@ class Article < ActiveRecord::Base
         tags.include?(tag)
     end
 
-    def tag_list=(names)
-        self.tags = names.split(',').map do |name|
-            Tag.where(name: name.strip).first_or_create!
-        end
-    end
-
     def tag_list
         self.tags
     end
