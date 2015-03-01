@@ -21,7 +21,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'select2-rails', '~> 3.5.9.3'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'bcrypt', '~> 3.1.7'
 gem 'faker', '1.4.3'
 
