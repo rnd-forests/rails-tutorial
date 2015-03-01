@@ -25,8 +25,8 @@ gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
 gem 'bcrypt', '~> 3.1.7'
 gem 'faker', '1.4.3'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+gem 'puma', '~> 2.11.1'
+gem 'rack-timeout', '~> 0.2.0'
 
 gem 'capistrano-rails', group: :development
 
