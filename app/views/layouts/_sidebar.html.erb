@@ -1,17 +1,24 @@
 <div class="sidebar">
     <div class="sidebar-wrapper">
-        <p class="sidebar-header"><span class="glyphicon glyphicon-ok"></span>Latest Articles</p>
+        <p class="sidebar-header"><span class="glyphicon glyphicon-stats"></span>Statistics</p>
+        <div class="stats">
+            <h1><%= pluralize(Article.all.count, 'article') %></h1>
+            <h1><%= pluralize(User.where(activated: true).count, 'member') %></h1>
+        </div>
+    </div>
+    <div class="sidebar-wrapper">
+        <p class="sidebar-header"><span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>Latest Articles</p>
         <ul class="list-group">
             <% newest_articles.each do |article| %>
-                <li class="list-group-item">
-                    <%= link_to article.title, article, class: 'list-group-item-heading' %>
+                <%= link_to article, class: 'list-group-item' do %>
+                    <h4 class="list-group-item-heading"><%= article.title %></h4>
                     <p class="list-group-item-text"><span class="glyphicon glyphicon-time"></span><%= time_ago_in_words(article.created_at) %> ago</p>
-                </li>
+                <% end %>
             <% end %>
         </ul>
     </div>
     <div class="sidebar-wrapper">
-        <p class="sidebar-header"><span class="glyphicon glyphicon-ok"></span>Tag Cloud</p>
+        <p class="sidebar-header"><span class="glyphicon glyphicon-tags"></span>Tag Cloud</p>
         <div class="tag-cloud">
             <% Tag.all.each do |tag| %>
                 <%= link_to tag.name, tag_path(tag), class: 'tag-cloud-item' %>

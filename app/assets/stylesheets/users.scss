@@ -3,7 +3,7 @@
         text-align: center;
         margin-bottom: 2em;
 
-        h4 a {
+        .user-name {
             color: darken(rgb(231, 76, 60), 10%);
 
             &:hover {
@@ -22,7 +22,7 @@
         width: 100%;
         margin-top: 20px;
         margin-bottom: 10px;
-        border-radius: 0;
+        border-radius: 3px;
     }
 }
 
