@@ -1,0 +1,45 @@
+.comment-create-form {
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    textarea {
+        resize: none;
+    }
+}
+
+.comment-stats {
+    margin-bottom: 25px;
+
+    .label {
+        font-weight: normal;
+        font-size: 16px;
+    }
+}
+
+.comments {
+
+    .media {
+        background-color: #f9f9fa;
+        padding: 10px 15px;
+        text-align: left;
+
+        .media-left {
+            .comment_user_avatar {
+                img {
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        .media-body {
+            .media-heading a {
+                color: #111111;
+            }
+
+            p {
+                color: #747c83;
+                font-size: 16px;
+            }
+        }
+    }
+}

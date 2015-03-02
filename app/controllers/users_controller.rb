@@ -64,7 +64,14 @@ class UsersController < ApplicationController
 
     def articles
         @user = User.find(params[:id])
-        @articles = Article.where(user_id: @user.id)
+        @articles = @user.articles
+    end
+
+    def activities
+        @user = User.find(params[:id])
+        @relationships = Relationship.where(follower_id: @user.id).order('created_at DESC').paginate(page: params[:page], per_page: 15)
+        @comments = @user.comments.order('created_at DESC').paginate(page: params[:page], per_page: 15)
+        @articles = @user.articles.paginate(page: params[:page], per_page: 15)
     end
 
 
@@ -80,9 +87,5 @@ class UsersController < ApplicationController
     def correct_user
         @user = User.find(params[:id])
         redirect_to(root_url) unless current_user?(@user)
-    end
-
-    def admin_user
-        redirect_to(root_url) unless current_session_user.admin?
     end
 end

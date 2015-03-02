@@ -23,6 +23,25 @@
                 <%= image_tag(@article.picture.url, class: 'article-picture') if @article.picture? %>
                 <p class="text-left"><%= @article.content %></p>
             </div>
+            <div class="comment-create-form">
+                <%= render 'comments/comment_form', article_id: @article.id %>
+            </div>
+            <% unless @comments.empty? %>
+                <div class="well">
+                    <div class="comments">
+                        <div class="comment-stats">
+                            <span class="label label-primary"><%= pluralize(@comments.count, 'comment') %></span>
+                            <span class="label label-success"><%= pluralize(@article.comment_authors.count, 'user') %> commented on this article</span>
+                        </div>
+                        <% @comments.each do |comment| %>
+                            <%= render 'comments/comment', comment: comment %>
+                        <% end %>
+                        <div class="text-center"><%= will_paginate @comments, previous_label: '&laquo;', next_label: '&raquo;' %></div>
+                    </div>
+                </div>
+            <% else %>
+                <p class="text-center text-warning">No comments have been posted yet.</p>
+            <% end %>
         </div>
     </div>
 </div>

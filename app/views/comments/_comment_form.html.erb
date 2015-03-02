@@ -1,0 +1,15 @@
+<%= form_for Comment.new do |f| %>
+    <div class="form-group">
+        <%= f.hidden_field :article_id, value: article_id %>
+        <%= f.text_area :body, class: 'form-control', rows: 4, placeholder: 'leave your comment here' %>
+    </div>
+<% end %>
+
+<script>
+    $('#new_comment').on('keydown', function(event) {
+        if (event.keyCode == 13) {
+            event.preventDefault();
+            $(this).submit();
+        }
+    });
+</script>
