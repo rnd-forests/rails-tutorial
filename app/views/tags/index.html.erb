@@ -7,10 +7,10 @@
         <div class="list-group">
             <a class="list-group-item active"><span class="glyphicon glyphicon-tags"></span></a>
             <% @tags.each do |tag| %>
-                <a href="<%= tag_path(tag) %>" class="list-group-item">
+                <%= link_to tag_path(tag), class: 'list-group-item' do %>
                     <span class="badge"><%= pluralize(tag.articles.count, 'article') %></span>
                     <%= tag.name %>
-                </a>
+                <% end %>
             <% end %>
         </div>
     </div>

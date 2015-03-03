@@ -7,12 +7,34 @@
         </div>
     </div>
     <div class="sidebar-wrapper">
-        <p class="sidebar-header"><span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>Latest Articles</p>
+        <p class="sidebar-header"><span class="glyphicon glyphicon-pushpin"></span>Latest Articles</p>
         <ul class="list-group">
             <% newest_articles.each do |article| %>
                 <%= link_to article, class: 'list-group-item' do %>
                     <h4 class="list-group-item-heading"><%= article.title %></h4>
                     <p class="list-group-item-text"><span class="glyphicon glyphicon-time"></span><%= time_ago_in_words(article.created_at) %> ago</p>
+                <% end %>
+            <% end %>
+        </ul>
+    </div>
+    <div class="sidebar-wrapper">
+        <p class="sidebar-header"><span class="glyphicon glyphicon-heart"></span>Top Followed Users</p>
+        <ul class="list-group">
+            <% top_followed_users.each do |user| %>
+                <%= link_to user, class: 'list-group-item' do %>
+                    <%= user.name %>
+                    <span class="badge"><%= pluralize(user.followers.count, 'follower') %></span>
+                <% end %>
+            <% end %>
+        </ul>
+    </div>
+    <div class="sidebar-wrapper">
+        <p class="sidebar-header"><span class="glyphicon glyphicon-book"></span>Top Creators</p>
+        <ul class="list-group">
+            <% top_creators.each do |user| %>
+                <%= link_to user, class: 'list-group-item' do %>
+                    <%= user.name %>
+                    <span class="badge"><%= pluralize(user.articles.count, 'article') %></span>
                 <% end %>
             <% end %>
         </ul>

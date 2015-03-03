@@ -1,5 +1,5 @@
 <% content_for :title, 'Users' %>
-<h2 class="section-title"><span class="section-division">+</span>Find your friends and connect to them</h2>
+<h2 class="section-title"><span class="section-division">+</span>Find your friends</h2>
 <div class="users-list">
     <div class="text-center"><%= will_paginate @users, previous_label: '&laquo;', next_label: '&raquo;' %></div>
     <% @users.in_groups_of(4, false).each do |users| %>

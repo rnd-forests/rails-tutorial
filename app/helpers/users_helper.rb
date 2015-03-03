@@ -6,4 +6,20 @@ module UsersHelper
         gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
         image_tag(gravatar_url, alt: user.name)
     end
+
+    def top_followed_users
+        User.select(:id, :name)
+            .joins('INNER JOIN relationships ON users.id = relationships.followed_id')
+            .group('relationships.followed_id')
+            .order('COUNT(users.id) DESC')
+            .limit(5)
+    end
+
+    def top_creators
+        User.select(:id, :name)
+            .joins('INNER JOIN articles ON users.id = articles.user_id')
+            .group('articles.user_id')
+            .order('COUNT(users.id) DESC')
+            .limit(10)
+    end
 end
