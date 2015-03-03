@@ -401,6 +401,15 @@ input[type=file] {
                         padding-right: 5px;
                     }
                 }
+
+                .label {
+                    border-radius: 10px;
+                    background-color: #e74c3c;
+                    font-weight: normal;
+                    padding: 3px 7px;
+                    font-size: 13px;
+                    display: inline-block;
+                }
             }
         }
     }
