@@ -13,7 +13,11 @@ class Article < ActiveRecord::Base
     has_many :tags, through: :article_tag_relationships
 
     def attach_tag(tag)
-        article_tag_relationships.create!(tag_id: tag.id)
+        article_tag_relationships.create(tag_id: tag.id)
+    end
+
+    def detach_tag(tag)
+        article_tag_relationships.find_by(tag_id: tag.id).destroy
     end
 
     def attaching_tag?(tag)

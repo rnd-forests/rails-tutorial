@@ -1,6 +1,9 @@
 <% content_for :title, 'Tags' %>
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
+        <div class="text-center" style="padding: 10px 0 15px 0">
+            <%= link_to 'Untagged articles? Click here.', untagged_articles_path, class: 'text-danger' %>
+        </div>
         <div class="list-group">
             <a class="list-group-item active"><span class="glyphicon glyphicon-tags"></span></a>
             <% @tags.each do |tag| %>

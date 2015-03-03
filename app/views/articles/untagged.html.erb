@@ -1,0 +1,14 @@
+<% content_for :title, 'Untagged Articles' %>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h3 class="text-center tag-header">Un-<span class="glyphicon glyphicon-tags" style="padding: 0 10px;"></span>articles</h3>
+        <% if @articles.empty? %>
+            <h4 class="text-warning text-center">This tag has no associated articles.</h4>
+        <% else %>
+            <div class="posts-wrapper">
+                <%= render @articles %>
+                <div class="text-center"><%= will_paginate @articles, previous_label: '&laquo;', next_label: '&raquo;' %></div>
+            </div>
+        <% end %>
+    </div>
+</div>

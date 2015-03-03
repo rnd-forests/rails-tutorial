@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     post 'signin'    => 'sessions#create'
     delete 'logout'  => 'sessions#destroy'
     get 'search'     => 'articles#search'
+    get 'untagged_articles' => 'articles#untagged'
 
     resources :users do
         member do
