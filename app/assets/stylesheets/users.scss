@@ -1,13 +1,61 @@
+.user-sidebar {
+    .thumbnail {
+        border: none;
+        padding: 0;
+
+        img {
+            margin-left: 0;
+        }
+
+        .caption {
+            padding: 0;
+
+            a, .user-name {
+                color: #333333;
+
+                &:hover {
+                    color: rgb(231, 76, 60);
+                }
+            }
+        }
+
+        .label {
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+        ul {
+            margin-top: 15px;
+            padding-left: 0;
+        }
+
+        li {
+            list-style: none;
+            font-size: 15px;
+            margin-bottom: 5px;
+
+            span {
+                padding-right: 5px;
+            }
+        }
+    }
+}
+
 .users-list {
     .user-block {
         text-align: center;
         margin-bottom: 2em;
 
+        .label {
+            font-weight: normal;
+            font-size: 13px;
+        }
+
         .user-name {
-            color: darken(rgb(231, 76, 60), 10%);
+            color: #333333;
 
             &:hover {
-                color: #5fcf80;
+                color: #e74c3c;
             }
         }
 

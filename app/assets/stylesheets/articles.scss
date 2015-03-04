@@ -1,7 +1,22 @@
 .article-wrapper {
-    .well {
-        background-color: #ffffff;
-        padding: 0;
+    .panel {
+        .panel-heading {
+            h2 {
+                margin: 0;
+            }
+        }
+
+        .panel-footer {
+            .dropdown-menu {
+                a {
+                    font-size: 16px;
+
+                    span {
+                        padding-right: 8px;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -24,6 +39,7 @@
 }
 
 .article-picture {
+    width: 100%;
     margin: 20px 0;
 }
 
@@ -39,6 +55,11 @@
         border-radius: 0;
         background: transparent;
         margin-bottom: 0;
+
+        li:nth-child(2)::before {
+            content: '';
+            padding: 0;
+        }
     }
 }
 

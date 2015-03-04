@@ -1,46 +1,53 @@
-<% content_for(:title, @article.title) %>
+<% content_for :title, @article.title %>
 <div class="row">
     <div class="col-md-3"><%= render 'users/user_sidebar' %></div>
     <div class="col-md-9">
         <div class="article-wrapper">
-            <div class="well">
-                <h2 class="article-title"><%= @article.title %></h2>
-                <p style="font-size: 13px;">Published at: <%= @article.created_at.strftime('%H:%M:%S - %b %d, %Y') %> |
-                    Last update: <%= @article.updated_at.strftime('%H:%M:%S - %b %d, %Y') %></p>
-                <%= render 'partials/tags', object: @article %>
-                <% if current_user?(@article.user) %>
+            <div class="panel panel-warning">
+                <div class="panel-heading">
                     <div class="text-center">
-                        <div class="btn-group" role="group">
-                            <%= link_to simple_format('', {class: 'glyphicon glyphicon-edit'}, {wrapper_tag: 'span'}), edit_article_path(@article),
-                                        class: 'btn btn-warning btn-sm', title: 'Update this article' %>
-                            <%= link_to simple_format('', {class: 'glyphicon glyphicon-trash'}, {wrapper_tag: 'span'}), @article, method: :delete,
-                                        data: { confirm: 'Do you want to delete this article?' }, class: 'btn btn-danger btn-sm', title: 'Delete this article' %>
-                        </div>
-                    </div>
-                <% end %>
-            </div>
-            <div class="well">
-                <%= image_tag(@article.picture.url, class: 'article-picture') if @article.picture? %>
-                <p class="text-left"><%= @article.content %></p>
-            </div>
-            <div class="comment-create-form">
-                <%= render 'comments/comment_form', article_id: @article.id %>
-            </div>
-            <% unless @comments.empty? %>
-                <div class="well">
-                    <div class="comments">
-                        <div class="comment-stats">
-                            <span class="label label-primary"><%= pluralize(@comments.count, 'comment') %></span>
-                            <span class="label label-success"><%= pluralize(@article.comment_authors.count, 'user') %> commented on this article</span>
-                        </div>
-                        <% @comments.each do |comment| %>
-                            <%= render 'comments/comment', comment: comment %>
-                        <% end %>
-                        <div class="text-center"><%= will_paginate @comments, previous_label: '&laquo;', next_label: '&raquo;' %></div>
+                        <h2><%= @article.title %></h2>
+                        <h5>Published at: <%= @article.created_at.strftime('%H:%M:%S - %b %d, %Y') %> | Last update: <%= time_ago_in_words(@article.updated_at) %> ago</h5>
+                        <%= render 'partials/tags', object: @article %>
                     </div>
                 </div>
-            <% else %>
+                <div class="panel-body">
+                    <%= image_tag(@article.picture.url, class: 'article-picture') if @article.picture? %>
+                    <p class="text-left"><%= @article.content %></p>
+                </div>
+                <div class="panel-footer">
+                    <div class="dropdown">
+                        <button class="btn btn-default btn-sm dropdown-toggle" id="article-settings" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-menu-down"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="article-settings">
+                            <% if current_user?(@article.user) %>
+                                <li><a href="<%= edit_article_path(@article) %>"><span class="glyphicon glyphicon-pencil"></span>Edit</a></li>
+                                <li>
+                                    <%= link_to @article, method: :delete, data: { confirm: 'Do you want to delete this article?' } do %>
+                                        <span class="glyphicon glyphicon-trash"></span>Delete
+                                    <% end %>
+                                </li>
+                                <div class="divider"></div>
+                            <% end %>
+                            <li><a href="#"><span class="glyphicon glyphicon-heart-empty"></span>Follow</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-flash"></span>Share</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-create-form">
+                <%= render 'comments/comment_form', article_id: @article.id, comments: @comments, authors: @article.comment_authors %>
+            </div>
+            <% if @comments.empty? %>
                 <p class="text-center text-warning">No comments have been posted yet.</p>
+            <% else %>
+                <div class="comments">
+                    <% @comments.each do |comment| %>
+                        <%= render 'comments/comment', comment: comment %>
+                    <% end %>
+                    <div class="text-center"><%= will_paginate @comments, previous_label: '&laquo;', next_label: '&raquo;' %></div>
+                </div>
             <% end %>
         </div>
     </div>

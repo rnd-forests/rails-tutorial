@@ -3,12 +3,14 @@
         <div class="thumbnail">
             <%= user_gravatar(@user, size: 220) %>
             <div class="caption">
-                <h3>
-                    <%= link_to @user.name, @user, class: 'user-name' %>
-                    <% if @user.admin? %>
-                        <p style="padding-top: 5px;"><span class="label label-danger">Administrator</span></p>
+                <h2>
+                    <%= link_to @user, class: 'user-name' do %>
+                        <%= @user.name %>
+                        <% if @user.admin? %>
+                            <span class="label label-success">Administrator</span>
+                        <% end %>
                     <% end %>
-                </h3>
+                </h2>
                 <ul>
                     <li><span class="glyphicon glyphicon-envelope"></span><%= @user.email %></li>
                     <li><span class="glyphicon glyphicon-time"></span>Joined in <%= @user.created_at.strftime('%B %d, %Y') %></li>
@@ -47,3 +49,7 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('.user-sidebar .user-avatar').addClass('img-thumbnail');
+</script>

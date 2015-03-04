@@ -169,6 +169,8 @@ GEM
     fog-xml (0.1.1)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-rails (4.3.0.0)
+      railties (>= 3.2, < 5.0)
     formatador (0.2.5)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
@@ -315,6 +317,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   faker (= 1.4.3)
   fog (~> 1.27.0)
+  font-awesome-rails (~> 4.3.0.0)
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.0)
   jquery-rails

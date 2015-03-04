@@ -91,58 +91,6 @@ a {
     }
 }
 
-.thumbnail {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-
-    img {
-        margin-left: 0;
-    }
-
-    .caption {
-        padding: 0;
-        color: #8c989e;
-
-        a {
-            color: rgb(128, 127, 255);
-
-            &:hover {
-                color: darken(rgb(128, 127, 255), 15%);
-            }
-        }
-
-        .user-name {
-            color: darken(rgb(231, 76, 60), 10%);
-
-            &:hover {
-                color: darken(rgb(231, 76, 60), 30%);
-            }
-        }
-    }
-
-    .label {
-        font-size: 11px;
-        font-family: Arial, Helvetica, sans-serif;
-        vertical-align: middle;
-    }
-
-    ul {
-        margin-top: 15px;
-        padding-left: 0;
-    }
-
-    li {
-        list-style: none;
-        font-size: 15px;
-        margin-bottom: 5px;
-
-        span {
-            padding-right: 5px;
-        }
-    }
-}
-
 .checkbox label {
     font-size: 14px;
 }
@@ -150,28 +98,6 @@ a {
 .form-heading {
     color: #333333;
     padding-bottom: 15px;
-}
-
-.well {
-    background-color: #41464c;
-    color: #8c989e;
-    border: none;
-    text-align: center;
-    box-shadow: none;
-    border-radius: 0;
-
-    .well-header {
-        display: block;
-        font-size: 18px;
-        line-height: 1.1;
-        color: rgb(70, 136, 71);
-        background-color: rgb(223, 240, 216);
-        padding: 15px 10px;
-    }
-
-    .list-group {
-        clear: both;
-    }
 }
 
 .list-group {
@@ -406,7 +332,7 @@ input[type=file] {
                     border-radius: 10px;
                     background-color: #e74c3c;
                     font-weight: normal;
-                    padding: 3px 7px;
+                    padding: 2px 7px;
                     font-size: 13px;
                     display: inline-block;
                 }

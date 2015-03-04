@@ -2,11 +2,6 @@ class CommentsController < ApplicationController
     before_action :logged_in_user
     before_action :admin_user, only: :destroy
 
-    def new
-        @comment = Comment.new
-        params[:user_id] = @current_user.id
-    end
-
     def create
         @comment = Comment.new(comment_params)
         @comment.user_id = @current_user.id
