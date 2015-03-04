@@ -12,7 +12,7 @@
             <% newest_articles.each do |article| %>
                 <%= link_to article, class: 'list-group-item', title: article.title do %>
                     <h4 class="list-group-item-heading"><%= article.title %></h4>
-                    <p class="list-group-item-text label label-danger"><%= time_ago_in_words(article.created_at) %> ago</p>
+                    <p class="list-group-item-text"><%= time_ago_in_words(article.created_at) %> ago</p>
                 <% end %>
             <% end %>
         </ul>

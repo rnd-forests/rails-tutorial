@@ -23,11 +23,22 @@ body {
 }
 
 a {
-    @include transition(all .5s ease);
+    @include transition(all .2s ease);
 
     &:hover, &:active, &:focus {
         text-decoration: none;
     }
+}
+
+.form-link {
+    a {
+        color: #5fcf80;
+    }
+}
+
+input[type=file] {
+    font-size: 15px;
+    color: #8c989e;
 }
 
 
@@ -150,11 +161,10 @@ a {
     }
 }
 
-/*--------------------------------------------------------------------*/
 
 /* Navigation */
 .main-navigation {
-    background: #222;
+    background: #222222;
     border-bottom: none;
 
     .navbar-brand {
@@ -232,69 +242,6 @@ a {
 }
 
 
-/* Articles Wrapper */
-.posts-wrapper {
-    .media {
-        margin-bottom: 25px;
-        padding-bottom: 5px;
-        border-bottom: 1px dashed #eaeaea;
-
-        .media-heading {
-            span {
-                font-size: 14px;
-                padding: 0 5px;
-            }
-        }
-
-        .post-timer {
-            font-size: 13px;
-
-            span {
-                font-size: 12px;
-                padding-right: 5px;
-            }
-        }
-
-        .post-content {
-            color: darken(#8c989e, 20%);
-            line-height: 1.8;
-        }
-
-        .dropdown-toggle {
-            color: #666666;
-            background-color: transparent;
-            border: none;
-        }
-
-        .btn-group.open .dropdown-toggle {
-            box-shadow: none;
-        }
-
-        .dropdown-menu {
-            margin-top: 0;
-            box-shadow: none;
-
-            li {
-                margin-bottom: 0;
-            }
-        }
-    }
-}
-
-
-/* Others */
-.form-link {
-    a {
-        color: #5fcf80;
-    }
-}
-
-input[type=file] {
-    font-size: 15px;
-    color: #8c989e;
-}
-
-
 /* Sidebar */
 .sidebar {
     padding-left: 15px;
@@ -326,15 +273,6 @@ input[type=file] {
                     span {
                         padding-right: 5px;
                     }
-                }
-
-                .label {
-                    border-radius: 10px;
-                    background-color: #e74c3c;
-                    font-weight: normal;
-                    padding: 2px 7px;
-                    font-size: 13px;
-                    display: inline-block;
                 }
             }
         }
@@ -398,7 +336,7 @@ input[type=file] {
     .user-sidebar {
         text-align: center;
 
-        img.image-thumbnail {
+        .user-avatar {
             margin: 0 auto;
         }
     }

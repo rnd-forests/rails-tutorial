@@ -3,4 +3,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require select2
+//= require summernote
 //= require_tree .

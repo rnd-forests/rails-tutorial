@@ -13,7 +13,7 @@
                 </div>
                 <div class="panel-body">
                     <%= image_tag(@article.picture.url, class: 'article-picture') if @article.picture? %>
-                    <p class="text-left"><%= @article.content %></p>
+                    <%= @article.content.html_safe %>
                 </div>
                 <div class="panel-footer">
                     <div class="dropdown">

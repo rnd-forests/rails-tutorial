@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <div class="comment-stats">
-            <span class="text-danger">What do you think about this article?</span>
+            <span class="glyphicon glyphicon-stats"></span>
             <span class="label label-info"><%= pluralize(comments.count, 'comment') %></span>
             <span class="label label-success"><%= pluralize(authors.count, 'commenter') %></span>
         </div>
@@ -10,11 +10,11 @@
         <div class="panel-body">
             <div class="form-group">
                 <%= f.hidden_field :article_id, value: article_id %>
-                <%= f.text_area :body, class: 'form-control', rows: 2, placeholder: 'write something...' %>
+                <%= f.text_area :body, class: 'form-control', rows: 2, placeholder: 'write your comment...' %>
             </div>
         </div>
         <div class="panel-footer">
-            <div class="text-right"><button type="submit" class="btn btn-sm btn-primary">Post</button></div>
+            <div class="text-right"><button type="submit" class="btn btn-sm btn-danger">Post</button></div>
         </div>
     <% end %>
 </div>

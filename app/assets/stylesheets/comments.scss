@@ -27,6 +27,7 @@
         background-color: #f9f9fa;
         padding: 10px 15px;
         text-align: left;
+        overflow: visible;
 
         .media-left {
             .comment_user_avatar {
@@ -37,6 +38,8 @@
         }
 
         .media-body {
+            overflow: visible;
+
             .media-heading a {
                 color: #111111;
             }
@@ -44,6 +47,19 @@
             p {
                 color: #747c83;
                 font-size: 16px;
+            }
+
+            .dropdown-toggle {
+                font-size: 10px;
+            }
+
+            .dropdown-menu {
+                margin-top: 0;
+                box-shadow: none;
+
+                li {
+                    margin-bottom: 0;
+                }
             }
         }
     }

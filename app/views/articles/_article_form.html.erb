@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-8 col-md-offset-2 article-form">
+    <div class="col-md-10 col-md-offset-1 article-form">
         <%= form_for(@article, html: { multipart: true }) do |f| %>
             <%= render 'partials/error_messages', object: f.object %>
 
@@ -9,7 +9,7 @@
             </div>
             <div class="form-group">
                 <%= f.label :content, class: 'control-label' %>
-                <%= f.text_area :content, class: 'form-control', rows: 6, placeholder: 'article content' %>
+                <%= f.text_area :content, id: 'summernote'%>
             </div>
             <div class="form-group">
                 <%= f.label :tag_list, class: 'control-label' %>
@@ -28,24 +28,26 @@
     </div>
 </div>
 
-
 <script>
     $(document).ready(function() {
-        $(function() {
-            var $picture = $('#article_picture');
-            var $selectBox = $('#tags-list-selection');
+        var $picture = $('#article_picture');
+        var $selectBox = $('#tags-list-selection');
 
-            $selectBox.select2({
-                placeholder: 'choose tags for article',
-                allowClear: true
-            });
+        $('#summernote').summernote({
+            height: 300,
+            focus: true
+        });
 
-            $picture.bind('change', function() {
-                var size_in_megabytes = this.files[0].size / 1024 / 1024;
-                if (size_in_megabytes > 5) {
-                    alert('Maximum file size is 5MB. Please choose a smaller file.');
-                }
-            });
+        $selectBox.select2({
+            placeholder: 'choose tags for article',
+            allowClear: true
+        });
+
+        $picture.bind('change', function() {
+            var size_in_megabytes = this.files[0].size / 1024 / 1024;
+            if (size_in_megabytes > 5) {
+                alert('Maximum file size is 5MB. Please choose a smaller file.');
+            }
         });
     });
 </script>
