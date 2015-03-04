@@ -398,8 +398,8 @@ input[type=file] {
     .user-sidebar {
         text-align: center;
 
-        .thumbnail img {
-            margin: auto;
+        img.image-thumbnail {
+            margin: 0 auto;
         }
     }
 }

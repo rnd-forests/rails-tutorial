@@ -4,11 +4,9 @@
             <%= user_gravatar(@user, size: 220) %>
             <div class="caption">
                 <h2>
-                    <%= link_to @user, class: 'user-name' do %>
-                        <%= @user.name %>
-                        <% if @user.admin? %>
-                            <span class="label label-success">Administrator</span>
-                        <% end %>
+                    <%= link_to @user.name, @user, class: 'user-name' %>
+                    <% if @user.admin? %>
+                        <p><span class="label label-success">Administrator</span></p>
                     <% end %>
                 </h2>
                 <ul>
@@ -49,7 +47,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    $('.user-sidebar .user-avatar').addClass('img-thumbnail');
-</script>

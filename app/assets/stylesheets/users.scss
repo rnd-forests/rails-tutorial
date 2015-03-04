@@ -3,8 +3,13 @@
         border: none;
         padding: 0;
 
-        img {
+        .user-avatar {
             margin-left: 0;
+            padding: 4px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: inline-block;
         }
 
         .caption {
