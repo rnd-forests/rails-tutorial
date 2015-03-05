@@ -1,8 +1,8 @@
-<% content_for :title, 'Forgot Password' %>
+<% provide :title, 'Forgot Password' %>
 <div class="row">
     <div class="col-md-6 col-md-offset-3 user-form">
         <%= form_for(:password_reset, url: password_resets_path) do |f| %>
-            <h1 class="form-heading">Forgot Your Password</h1>
+            <h2 class="section-title">Forgot Your Password</h2>
             <div class="form-group">
                 <%= f.label :email, class: 'control-label' %>
                 <%= f.email_field :email, class: 'form-control input-lg', placeholder: 'username@example.com' %>

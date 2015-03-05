@@ -1,13 +1,12 @@
 <% if logged_in? %>
-    <% content_for :title, 'Articles Feed' %>
+    <% provide :title, 'Articles Feed' %>
     <div class="row">
-        <h2 class="section-title"><span class="section-division">+</span>Articles Feed</h2>
         <div id="search-form"><%= render 'partials/search_form' %></div>
         <div class="col-md-8"><%= render 'partials/feed' %></div>
         <div class="col-md-4"><%= render 'layouts/sidebar' %></div>
     </div>
 <% else %>
-    <% content_for :title, 'Home' %>
+    <% provide :title, 'Home' %>
     <div class="row">
         <div class="col-md-12">
             <div class="jumbotron home-welcome">

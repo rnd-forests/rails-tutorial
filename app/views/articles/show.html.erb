@@ -1,18 +1,18 @@
-<% content_for :title, @article.title %>
+<% provide :title, @article.title %>
 <div class="row">
     <div class="col-md-3"><%= render 'users/user_sidebar' %></div>
     <div class="col-md-9">
         <div class="article-wrapper">
-            <div class="panel panel-warning">
+            <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="text-center">
-                        <h2><%= @article.title %></h2>
-                        <h5>Published at: <%= @article.created_at.strftime('%H:%M:%S - %b %d, %Y') %> | Last update: <%= time_ago_in_words(@article.updated_at) %> ago</h5>
+                        <h1><%= @article.title %></h1>
+                        <h4><%= @article.created_at.strftime('%H:%M:%S - %b %d, %Y') %></h4>
                         <%= render 'partials/tags', object: @article %>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <%= image_tag(@article.picture.url, class: 'article-picture') if @article.picture? %>
+                    <%= image_tag(@article.picture.url) if @article.picture? %>
                     <%= @article.content.html_safe %>
                 </div>
                 <div class="panel-footer">
@@ -40,7 +40,7 @@
                 <%= render 'comments/comment_form', article_id: @article.id, comments: @comments, authors: @article.comment_authors %>
             </div>
             <% if @comments.empty? %>
-                <p class="text-center text-warning">No comments have been posted yet.</p>
+                <p class="text-center text-warning">No comments found.</p>
             <% else %>
                 <div class="comments">
                     <% @comments.each do |comment| %>

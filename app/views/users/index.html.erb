@@ -1,4 +1,4 @@
-<% content_for :title, 'Users' %>
+<% provide :title, 'Members' %>
 <div class="users-list">
     <% @users.in_groups_of(4, false).each do |users| %>
         <div class="row">

@@ -1,44 +1,54 @@
 .posts-wrapper {
     .media {
         margin-bottom: 25px;
-        padding-bottom: 5px;
-        border-bottom: 1px dashed #eaeaea;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        overflow: visible;
 
-        .media-heading {
-            span {
-                font-size: 14px;
-                padding: 0 3px;
+        .media-body {
+            overflow: visible;
+
+            .media-heading {
+                span {
+                    font-size: 14px;
+                }
             }
-        }
 
-        .post-timer {
-            font-size: 13px;
+            .post-timer {
+                font-size: 13px;
 
-            span {
-                font-size: 12px;
-                padding-right: 5px;
+                span {
+                    font-size: 12px;
+                    padding-right: 5px;
+                }
             }
-        }
 
-        .post-content {
-            color: darken(#8c989e, 20%);
-            line-height: 1.8;
-        }
+            .post-content {
+                color: #8C989E;
+                line-height: 1.8;
 
-        .dropdown-toggle {
-            font-size: 10px;
-        }
+                img {
+                    width: 100%;
+                    margin: 10px auto;
+                }
+            }
 
-        .btn-group.open .dropdown-toggle {
-            box-shadow: none;
-        }
+            .dropdown-toggle {
+                font-size: 10px;
+            }
 
-        .dropdown-menu {
-            margin-top: 0;
-            box-shadow: none;
+            .btn-group.open .dropdown-toggle {
+                box-shadow: none;
+            }
 
-            li {
-                margin-bottom: 0;
+            .dropdown-menu {
+                margin-top: 0;
+                box-shadow: none;
+
+                li {
+                    margin-bottom: 0;
+                }
             }
         }
     }
@@ -47,14 +57,33 @@
 .article-wrapper {
     .panel {
         box-shadow: none;
+        border-radius: 0;
 
         .panel-heading {
-            h2 {
+            border-radius: 0;
+
+            h1 {
+                color: #E74C3C;
+                font-weight: bold;
                 margin: 0;
             }
         }
 
+        .panel-body {
+            img[style] {
+                width: 100% !important;
+                margin: 20px auto;
+            }
+
+            img {
+                width: 100%;
+                margin: 20px auto;
+            }
+        }
+
         .panel-footer {
+            border-radius: 0;
+
             .dropdown-menu {
                 a {
                     font-size: 16px;
@@ -70,25 +99,20 @@
 
 .article-title {
     color: #111111;
-    text-shadow: 0 1px 1px #eaeaea;
+    font-weight: bold;
 
     &:hover {
-        color: #5fcf80;
+        color: #4472B9;
     }
 }
 
 .article-author {
-    color: #5fcf80;
+    color: #111111;
     font-size: 16px;
 
     &:hover {
-        color: darken(#5fcf80, 15%);
+        color: #4472B9;
     }
-}
-
-.article-picture {
-    width: 100%;
-    margin: 20px 0;
 }
 
 .article-tags {
@@ -119,11 +143,16 @@
 
     .note-editor {
         border: 1px solid #dbd9d9;
-        border-radius: 4px;
+        border-radius: 3px;
 
         .note-toolbar {
             background-color: #dbd9d9;
             border-bottom: none;
+        }
+
+        .note-editable {
+            border-radius: 3px;
+            background-color: #ffffff;
         }
 
         .btn-toolbar {

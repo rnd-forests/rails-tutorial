@@ -1,4 +1,4 @@
-<% content_for :title, 'Create Article' %>
-<% content_for :article_form_button, 'Create article' %>
-<h2 class="section-title"><span class="section-division">+</span>Create new article</h2>
+<% provide :title, 'Create Article' %>
+<% provide :article_form_button, 'Confirm' %>
+<h2 class="section-title">Create new article</h2>
 <%= render 'article_form' %>

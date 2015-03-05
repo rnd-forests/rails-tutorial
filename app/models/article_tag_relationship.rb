@@ -1,4 +1,5 @@
 class ArticleTagRelationship < ActiveRecord::Base
+
     belongs_to :article
     belongs_to :tag
 

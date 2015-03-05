@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-12 article-form">
+    <div class="col-md-10 col-md-offset-1 article-form">
         <%= form_for(@article, html: { multipart: true }) do |f| %>
             <%= render 'partials/error_messages', object: f.object %>
 
@@ -34,10 +34,9 @@
         var $selectBox = $('#tags-list-selection');
 
         $('#summernote').summernote({
-            height: 300,
             focus: true,
             fontNames: [
-                'Source Sans Pro Regular', 'Arial', 'Arial Black', 'Comic Sans MS',
+                'Arial', 'Arial Black', 'Comic Sans MS', 'Source Sans Pro Regular',
                 'Courier New', 'Helvetica Neue', 'Impact', 'Lucida Grande',
                 'Tahoma', 'Times New Roman', 'Verdana', 'Futura-Medium'
             ],

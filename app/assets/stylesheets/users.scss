@@ -1,16 +1,11 @@
 .user-sidebar {
+
     .thumbnail {
         border: none;
-        padding: 0;
-
-        .user-avatar {
-            margin-left: 0;
-            padding: 4px;
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            display: inline-block;
-        }
+        border-radius: 0;
+        padding: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
 
         .caption {
             padding: 0;
@@ -21,6 +16,10 @@
                 &:hover {
                     color: rgb(231, 76, 60);
                 }
+            }
+
+            .user-name {
+                font-weight: bold;
             }
         }
 
@@ -57,7 +56,8 @@
         }
 
         .user-name {
-            color: #333333;
+            color: #222222;
+            font-weight: bold;
 
             &:hover {
                 color: #e74c3c;
