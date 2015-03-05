@@ -6,10 +6,9 @@ class CommentsController < ApplicationController
         @comment = Comment.new(comment_params)
         @comment.user_id = @current_user.id
         if @comment.save
-            flash[:success] = 'Your comment was successfully added!'
             redirect_to request.referer
         else
-            flash[:danger] = 'Something went wrong!'
+            flash[:danger] = 'Something probably went wrong. Your comment was discarded.'
             redirect_to request.referer
         end
     end

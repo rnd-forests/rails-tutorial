@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-10 col-md-offset-1 article-form">
+    <div class="col-md-12 article-form">
         <%= form_for(@article, html: { multipart: true }) do |f| %>
             <%= render 'partials/error_messages', object: f.object %>
 
@@ -37,9 +37,21 @@
             height: 300,
             focus: true,
             fontNames: [
-            'Source Sans Pro Regular', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New',
-            'Helvetica Neue', 'Impact', 'Lucida Grande',
-            'Tahoma', 'Times New Roman', 'Verdana', 'Futura-Medium'
+                'Source Sans Pro Regular', 'Arial', 'Arial Black', 'Comic Sans MS',
+                'Courier New', 'Helvetica Neue', 'Impact', 'Lucida Grande',
+                'Tahoma', 'Times New Roman', 'Verdana', 'Futura-Medium'
+            ],
+            toolbar: [
+                ['action', ['undo', 'redo']],
+                ['fontsize', ['fontsize']],
+                ['style', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['layout', ['ul', 'ol']],
+                ['para', ['paragraph']],
+                ['height', ['height']],
+                ['insert', ['picture', 'link', 'video', 'table', 'hr']],
+                ['misc', ['fullscreen', 'codeview']]
             ]
         });
 

@@ -4,7 +4,7 @@ class Article < ActiveRecord::Base
     mount_uploader :picture, PictureUploader
     validates :user_id, presence: true
     validates :title, presence: true
-    validates :content, presence: true, length: { maximum: 5000 }
+    validates :content, presence: true, length: { maximum: 500000 }
     validate :picture_size
 
     belongs_to :user
