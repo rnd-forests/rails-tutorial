@@ -6,7 +6,7 @@
             <span class="label label-success"><%= pluralize(authors.count, 'commenter') %></span>
         </div>
     </div>
-    <%= form_for Comment.new do |f| %>
+    <%= form_for(Comment.new, remote: true) do |f| %>
         <div class="panel-body">
             <div class="form-group">
                 <%= f.hidden_field :article_id, value: article_id %>
@@ -18,15 +18,3 @@
         </div>
     <% end %>
 </div>
-
-<script>
-    // Submit the form when user presses Enter
-    $(document).ready(function() {
-        $('#new_comment').on('keydown', function(e) {
-            if (e.keyCode == 13) {
-                e.preventDefault();
-                $(this).submit();
-            }
-        });
-    });
-</script>

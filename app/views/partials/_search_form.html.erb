@@ -12,28 +12,3 @@
         <% end %>
     </div>
 </div>
-
-<script>
-    $(document).ready(function() {
-        var $searchform = $('#search-form');
-        var $searchbox = $('#keyword');
-        var $searchwarning = $('#search-alert');
-
-        $searchbox.on('input', function() {
-            var input = $.trim($(this).val());
-            if (!input || input.length == 0) {
-                $searchwarning.removeClass('hidden');
-            } else {
-                $searchwarning.addClass('hidden');
-            }
-        });
-
-        $searchform.submit(function() {
-            var input = $.trim($searchbox.val());
-            if (!input || input.length == 0) {
-                $searchwarning.removeClass('hidden');
-                return false;
-            }
-        });
-    });
-</script>

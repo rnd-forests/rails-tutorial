@@ -5,18 +5,27 @@ class CommentsController < ApplicationController
     def create
         @comment = Comment.new(comment_params)
         @comment.user_id = @current_user.id
-        if @comment.save
-            redirect_to request.referer
-        else
-            flash[:danger] = 'Something probably went wrong. Your comment was discarded.'
-            redirect_to request.referer
+        respond_to do |format|
+            if @comment.save
+                format.html { redirect_to request.referer }
+                format.js
+            else
+                format.html { redirect_to request.referer, flash: { danger: 'Your comment was discarded.' } }
+                format.js { render js: "$('#failed-comment-modal').modal('show');" }
+            end
         end
     end
 
     def destroy
-        Comment.find(params[:id]).destroy
-        flash[:success] = 'Your comment has been deleted!'
-        redirect_to request.referer
+        @comment = Comment.find(params[:id])
+        if @comment.destroy
+            respond_to do |format|
+                format.html { redirect_to request.referer }
+                format.js do
+                    render js: "$('#deleted-comment-modal').modal('show');"
+                end
+            end
+        end
     end
 
 
