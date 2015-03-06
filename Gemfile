@@ -20,6 +20,7 @@ gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'jquery-turbolinks', '~> 2.1.0'
 gem 'jbuilder', '~> 2.0'
 gem 'select2-rails', '~> 3.5.9.3'
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -33,7 +34,7 @@ gem 'rack-timeout', '~> 0.2.0'
 gem 'capistrano-rails', group: :development
 
 group :development, :test do
-	  gem 'sqlite3'
+    gem 'sqlite3'
     gem 'byebug'
     gem 'web-console', '~> 2.0'
     gem 'spring'
