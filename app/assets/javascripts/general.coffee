@@ -20,4 +20,5 @@ jQuery ->
         input = $.trim(search_box.val())
         if !input || input.length == 0
             $('#search-keyword-modal').modal("show")
+            search_box.popover('hide')
             return false
