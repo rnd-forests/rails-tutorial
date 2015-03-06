@@ -3,7 +3,7 @@
     <div class="media-body">
         <div class="btn-group pull-right">
             <span class="glyphicon glyphicon-menu-down dropdown-toggle" data-toggle="dropdown"></span>
-            <ul class="dropdown-menu" role="menu">
+            <ul class="dropdown-menu">
                 <li><%= link_to 'Read more', article %></li>
                 <% if current_user?(article.user) %>
                     <li><%= link_to 'Edit', edit_article_path(article) %></li>

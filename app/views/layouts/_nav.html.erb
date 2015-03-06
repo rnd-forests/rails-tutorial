@@ -24,13 +24,13 @@
             <ul class="nav navbar-nav navbar-right">
                 <% if logged_in? %>
                     <li><a href="<%= new_article_path %>" data-toggle="tooltip" data-placement="bottom" title="Create a new article">
-                        <span class="glyphicon glyphicon-plus"></span>
+                        <span class="glyphicon glyphicon-pencil"></span>
                     </a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <%= current_session_user.name %> <span class="caret"></span>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <%= current_session_user.name %><span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu" role="menu">
+                        <ul class="dropdown-menu">
                             <li><%= link_to 'Your profile', current_session_user %></li>
                             <li><%= link_to 'Edit account', edit_user_path(current_session_user) %></li>
                             <li class="divider"></li>

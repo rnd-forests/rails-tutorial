@@ -1,14 +1,18 @@
-<div class="alert alert-warning hidden" id="search-alert" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    Search keyword cannot be blank!
+<div id="search-keyword-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header text-center text-warning">Wrong searching pattern</div>
+            <div class="modal-body">Your searching keyword cannot be blank. Try another keyword.</div>
+        </div>
+    </div>
 </div>
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <%= form_tag(search_path, {method: 'get', id: 'search-form'}) do %>
-            <%= text_field_tag :keyword, nil, {class: 'form-control input-lg', id: 'keyword', placeholder: 'searching for articles'} %>
+            <%= text_field_tag :keyword, nil, {class: 'form-control input-lg', id: 'keyword', placeholder: 'searching for articles',
+                                               :'data-toggle' => 'popover', :'data-placement' => 'bottom',
+                                               :'data-content' => 'Searching pattern cannot be blank.'} %>
         <% end %>
     </div>
 </div>

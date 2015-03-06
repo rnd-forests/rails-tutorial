@@ -1,10 +1,12 @@
-<% unless object.tags.to_a.empty? %>
-    <div class="article-tags">
-        <ol class="breadcrumb">
-            <li><span class="glyphicon glyphicon-tags"></span></li>
+<div class="article-tags">
+    <ol class="breadcrumb">
+        <li><span class="glyphicon glyphicon-tags"></span></li>
+        <% if object.tags.to_a.empty? %>
+            <li>This article has no associated tags</li>
+        <% else %>
             <% object.tags.each do |tag| %>
                 <li><a href="<%= tag_path(tag) %>"><%= tag.name %></a></li>
             <% end %>
-        </ol>
-    </div>
-<% end %>
+        <% end %>
+    </ol>
+</div>

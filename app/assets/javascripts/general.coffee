@@ -8,20 +8,16 @@ jQuery ->
     # Search form
     search_form = $('#search-form')
     search_box = $('#keyword')
-    search_alert = $('#search-alert')
 
-    search_box
-    .on "input", ->
+    search_box.on "input", ->
         input = $.trim($(this).val())
         if !input || input.length == 0
-            search_alert.removeClass('hidden')
-            return false
+            $(this).popover('toggle')
         else
-            search_alert.addClass('hidden')
+            $(this).popover('hide')
 
-    search_form
-    .on "submit", ->
+    search_form.on "submit", ->
         input = $.trim(search_box.val())
         if !input || input.length == 0
-            search_alert.removeClass('hidden')
+            $('#search-keyword-modal').modal("show")
             return false

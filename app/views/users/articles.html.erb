@@ -1,10 +1,10 @@
 <% provide :title, @user.name + ' - Articles' %>
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-6 col-md-offset-3">
         <div class="text-center">
             <div class="list-group">
                 <a class="list-group-item active">
-                    <h4 class="list-group-item-heading" style="color: #ffffff">Articles of <%= @user.name %></h4>
+                    <h4 class="list-group-item-heading" style="color: #ffffff"><%= @user.name %>'s articles</h4>
                 </a>
                 <% @articles.each do |article| %>
                     <%= link_to article.title, article, class: 'list-group-item' %>
