@@ -21,7 +21,7 @@ jQuery ->
     summernote.summernote({
         focus: true,
         fontNames: [
-            'Arial', 'Arial Black', 'Comic Sans MS', 'Source Sans Pro Regular',
+            'Arial', 'Arial Black', 'Comic Sans MS', 'source-sans-pro',
             'Courier New', 'Helvetica Neue', 'Impact', 'Lucida Grande',
             'Tahoma', 'Times New Roman', 'Verdana', 'Futura-Medium'
         ],
