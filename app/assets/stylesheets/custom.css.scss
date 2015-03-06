@@ -1,21 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@font-face {
-    font-family: "Source Sans Pro Regular";
-    src: url(font-path('fonts/source-sans-pro/sourcesanspro-regular-webfont.eot'));
-    src: url(font-path('fonts/source-sans-pro/sourcesanspro-regular-webfont.eot?#iefix')) format('embedded-opentype'),
-    url(font-path('fonts/source-sans-pro/sourcesanspro-regular-webfont.woff2')) format('woff2'),
-    url(font-path('fonts/source-sans-pro/sourcesanspro-regular-webfont.woff')) format('woff'),
-    url(font-path('fonts/source-sans-pro/sourcesanspro-regular-webfont.ttf')) format('truetype'),
-    url(font-path('fonts/source-sans-pro/sourcesanspro-regular-webfont.svg#source_sans_proregular')) format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
-    font-family: "Source Sans Pro Regular", sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
+    font-weight: normal;
     background-color: #eaedef;
     color: #525252;
     padding-top: 60px;
@@ -195,10 +184,6 @@ input[type=file] {
     text-align: center;
     clear: both;
 
-    img {
-        width: 32px;
-    }
-
     .footer-links {
         padding-left: 0;
         margin-top: 20px;
@@ -223,6 +208,7 @@ input[type=file] {
     color: #111111;
     margin-bottom: 20px;
     text-align: center;
+    font-weight: normal;
 }
 
 
@@ -240,7 +226,7 @@ input[type=file] {
 
             h1 {
                 margin: 0 0 10px;
-                font-weight: bold;
+                font-weight: normal;
                 color: #E74C3C;
             }
         }
@@ -282,7 +268,7 @@ input[type=file] {
     }
 
     .select2-search-choice, .select2-search-field input[type=text] {
-        font-family: "Source Sans Pro Regular", sans-serif;
+        font-family: 'Source Sans Pro', sans-serif;
     }
 }
 
@@ -314,7 +300,7 @@ input[type=file] {
     }
 
     .popover {
-        font-family: "Source Sans Pro", sans-serif;
+        font-family: 'Source Sans Pro', sans-serif;
     }
 }
 

@@ -1,5 +1,4 @@
 .user-sidebar {
-
     .thumbnail {
         border: none;
         border-radius: 0;
@@ -16,10 +15,6 @@
                 &:hover {
                     color: rgb(231, 76, 60);
                 }
-            }
-
-            .user-name {
-                font-weight: bold;
             }
         }
 
@@ -57,7 +52,6 @@
 
         .user-name {
             color: #222222;
-            font-weight: bold;
 
             &:hover {
                 color: #e74c3c;

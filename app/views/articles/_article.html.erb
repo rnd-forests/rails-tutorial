@@ -11,11 +11,11 @@
                 <% end %>
             </ul>
         </div>
-        <h2 class="media-heading">
+        <h3 class="media-heading">
             <%= link_to article.title, article, class: 'article-title' %>
             <span class="text-muted">by</span>
             <%= link_to article.user.name, article.user, class: 'article-author' %>
-        </h2>
+        </h3>
         <%= render 'partials/tags', object: article %>
         <p class="post-timer"><span class="glyphicon glyphicon-time"></span>Published <%= time_ago_in_words(article.created_at) %> ago</p>
         <div class="post-content">
