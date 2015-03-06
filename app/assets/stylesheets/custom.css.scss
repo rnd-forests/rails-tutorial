@@ -144,6 +144,10 @@ input[type=file] {
 
 .popover {
     box-shadow: none;
+
+    .popover-content {
+        font-size: 16px;
+    }
 }
 
 
