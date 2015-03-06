@@ -1,5 +1,8 @@
 jQuery ->
 
+    # Make embedded videos responsive
+    $('.article-wrapper').find('iframe').wrap("<div class='embed-responsive embed-responsive-16by9'></div>");
+
     # Article form
     picture = $('#article_picture')
     tags_select_box = $('#tags-list-selection')

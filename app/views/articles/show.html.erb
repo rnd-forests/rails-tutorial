@@ -40,19 +40,14 @@
                 <%= render 'comments/comment_notifications' %>
                 <%= render 'comments/comment_form', article_id: @article.id, comments: @comments, authors: @article.comment_authors %>
             </div>
-            <% if @comments.empty? %>
-                <p class="text-center text-warning">No comments found.</p>
-            <% else %>
-                <div id="comments">
+            <div id="comments">
+                <% if @comments.empty? %>
+                    <p class="text-center text-warning no-comment">No comments found.</p>
+                <% else %>
                     <%= render @comments %>
                     <div class="text-center"><%= will_paginate @comments, previous_label: '&laquo;', next_label: '&raquo;' %></div>
-                </div>
-            <% end %>
+                <% end %>
+            </div>
         </div>
     </div>
 </div>
-
-<script>
-    // Make embedded videos responsive
-    $('.article-wrapper').find('iframe').wrap("<div class='embed-responsive embed-responsive-16by9'></div>")
-</script>
