@@ -78,12 +78,23 @@
     margin-bottom: 10px;
 }
 
-.user-activities {
-    .panel {
-        font-size: 16px;
+.activities {
+    .author {
+        color: #e74c3c;
 
-        .panel-footer {
-            font-size: 14px;
+        &:hover {
+            color: #4472B9;
+        }
+    }
+
+    .user-activities {
+        .panel {
+            font-size: 16px;
+
+            .panel-footer {
+                font-size: 14px;
+            }
         }
     }
 }
+
