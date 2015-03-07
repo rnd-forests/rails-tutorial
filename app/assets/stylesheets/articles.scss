@@ -114,6 +114,18 @@
             border-radius: 0;
         }
     }
+
+    .article-author-information {
+        .panel-body {
+            span {
+                padding: 0 10px;
+            }
+
+            a {
+                font-weight: 600;
+            }
+        }
+    }
 }
 
 .article-title {

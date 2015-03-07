@@ -1,7 +1,6 @@
 <% provide :title, @article.title %>
 <div class="row">
-    <div class="col-md-3"><%= render 'users/user_sidebar' %></div>
-    <div class="col-md-9">
+    <div class="col-md-10 col-md-offset-1">
         <div class="article-wrapper">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -33,6 +32,13 @@
                     <%= @article.content.html_safe %>
                 </div>
                 <div class="panel-footer"><%= render 'partials/tags', object: @article %></div>
+            </div>
+            <div class="panel panel-default article-author-information">
+                <div class="panel-body">
+                    Author: <%= link_to @article.user.name, @article.user, class: 'article-user' %><span class="fa fa-angle-right"></span>
+                    See other articles: <%= link_to pluralize(@article.user.articles.count, 'article'), articles_user_path(@article.user) %><span class="fa fa-angle-right"></span>
+                    Public activities: <%= link_to 'Recent activities', activities_user_path(@article.user) %>
+                </div>
             </div>
             <div class="comment-create-form">
                 <%= render 'comments/comment_notifications' %>
