@@ -3,7 +3,7 @@
         margin-bottom: 25px;
         padding: 20px;
         background-color: #ffffff;
-        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        box-shadow: 0 1px 1px rgba(0,0,0,0.3);
         overflow: visible;
 
         .media-body {
@@ -67,21 +67,25 @@
 
         .panel-heading {
             border-radius: 0;
+            background-color: #31a480;
 
             h1 {
-                color: #333333;
-                margin: 0 0 15px;
+                color: #ffffff;
+            }
+
+            .publishing-time {
+                color: #90dec6;
             }
 
             .dropdown {
                 .dropdown-toggle {
                     font-size: 10px;
-                    color: #111111;
+                    color: #ffffff;
                 }
 
                 .dropdown-menu {
                     box-shadow: none;
-                    
+
                     a {
                         font-size: 16px;
 

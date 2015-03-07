@@ -94,6 +94,24 @@
             .panel-footer {
                 font-size: 14px;
             }
+
+            .article-author {
+                color: #31a480;
+                font-weight: 600;
+
+                &:hover {
+                    color: #90dec6;
+                }
+            }
+
+            .article-title {
+                color: #54588a;
+                font-weight: 600;
+
+                &:hover {
+                    color: #abaecc;
+                }
+            }
         }
     }
 }

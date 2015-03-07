@@ -3,7 +3,7 @@
     <h2 class="section-title">Public activities of <%= link_to @user.name, @user, class: 'author' %></h2>
     <div class="col-md-4">
         <div class="user-activities">
-            <div class="panel panel-warning">
+            <div class="panel panel-info">
                 <div class="panel-heading text-center"><%= @relationships.count %> following</div>
             </div>
             <% @relationships.each do |relationship| %>
@@ -29,7 +29,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <%= link_to @user.name, @user, class: 'article-author' %> <span class="text-muted">commented on</span>
-                        <%= link_to article.title, article, class: 'text-danger' %>
+                        <%= link_to article.title, article, class: 'article-title' %>
                     </div>
                     <div class="panel-footer"><%= time_ago_in_words(comment.created_at) %> ago</div>
                 </div>
@@ -39,14 +39,14 @@
     </div>
     <div class="col-md-4">
         <div class="user-activities">
-            <div class="panel panel-danger">
+            <div class="panel panel-info">
                 <div class="panel-heading text-center"><%= pluralize(@articles.count, 'article') %></div>
             </div>
             <% @articles.each do |article| %>
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <%= link_to @user.name, @user, class: 'article-author' %> <span class="text-muted">created article - </span>
-                        <%= link_to article.title, article, class: 'text-danger' %>
+                        <%= link_to article.title, article, class: 'article-title' %>
                     </div>
                     <div class="panel-footer"><%= time_ago_in_words(article.created_at) %> ago</div>
                 </div>

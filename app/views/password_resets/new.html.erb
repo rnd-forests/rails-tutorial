@@ -2,12 +2,14 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3 user-form">
         <%= form_for(:password_reset, url: password_resets_path) do |f| %>
-            <h2 class="section-title">Forgot Your Password</h2>
+            <h2 class="section-title">Forgot Your Password?</h2>
             <div class="form-group">
                 <%= f.label :email, class: 'control-label' %>
                 <%= f.email_field :email, class: 'form-control input-lg', placeholder: 'username@example.com' %>
             </div>
             <button type="submit" class="btn btn-lg btn-success">Send password reset link</button>
         <% end %>
+        <p class="text-center help-block form-link">Trying to <%= link_to 'Sign In', signin_path %>?</p>
+        <p class="text-center help-block form-link">Don't have an account? <%= link_to 'Create a free account', signup_path %></p>
     </div>
 </div>
