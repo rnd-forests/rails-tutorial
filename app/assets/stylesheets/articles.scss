@@ -120,13 +120,19 @@
     }
 
     .article-author-information {
-        .panel-body {
+        .panel-heading {
             span {
-                padding: 0 10px;
+                padding-right: 5px;
+                color: #ffffff;
             }
 
             a {
-                font-weight: 600;
+                margin-right: 15px;
+                color: #ffffff;
+
+                &:hover {
+                    color: #e74c3c;
+                }
             }
         }
     }

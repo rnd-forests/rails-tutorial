@@ -1,9 +1,9 @@
 <% provide :title, 'Members' %>
 <div class="users-list">
-    <% @users.in_groups_of(4, false).each do |users| %>
+    <% @users.in_groups_of(6, false).each do |users| %>
         <div class="row">
             <% users.each do |user| %>
-                <div class="col-md-3 user-block">
+                <div class="col-md-2 user-block">
                     <%= render user %>
                 </div>
             <% end %>

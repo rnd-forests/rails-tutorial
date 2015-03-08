@@ -1,13 +1,22 @@
 <% provide :title, @user.name + ' - Articles' %>
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
+        <div class="text-center" style="padding: 10px 0 15px 0">
+            <%= link_to @user, class: 'text-danger' do %>
+                <span class="fa fa-arrow-circle-left"></span> <%= @user.name %>
+            <% end %>
+        </div>
         <div class="text-center">
             <div class="list-group">
                 <a class="list-group-item active">
                     <h4 class="list-group-item-heading" style="color: #ffffff"><%= @user.name %>'s articles</h4>
                 </a>
-                <% @articles.each do |article| %>
-                    <%= link_to article.title, article, class: 'list-group-item' %>
+                <% if @articles.any? %>
+                    <% @articles.each do |article| %>
+                        <%= link_to article.title, article, class: 'list-group-item' %>
+                    <% end %>
+                <% else %>
+                    <a class="list-group-item"><%= @user.name %> hasn't posted anything yet.</a>
                 <% end %>
             </div>
         </div>

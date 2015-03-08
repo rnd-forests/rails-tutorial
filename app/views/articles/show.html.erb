@@ -34,10 +34,10 @@
                 <div class="panel-footer"><%= render 'partials/tags', object: @article %></div>
             </div>
             <div class="panel panel-default article-author-information">
-                <div class="panel-body">
-                    Author: <%= link_to @article.user.name, @article.user, class: 'article-user' %><span class="fa fa-angle-right"></span>
-                    See other articles: <%= link_to pluralize(@article.user.articles.count, 'article'), articles_user_path(@article.user) %><span class="fa fa-angle-right"></span>
-                    Public activities: <%= link_to 'Recent activities', activities_user_path(@article.user) %>
+                <div class="panel-heading">
+                    <span class="fa fa-user"></span><%= link_to @article.user.name, @article.user %>
+                    <span class="fa fa-book"></span><%= link_to pluralize(@article.user.articles.count, 'article'), articles_user_path(@article.user) %>
+                    <span class="fa fa-bullhorn"></span><%= link_to 'Recent activities', activities_user_path(@article.user) %>
                 </div>
             </div>
             <div class="comment-create-form">

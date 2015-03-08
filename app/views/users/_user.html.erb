@@ -1,7 +1,5 @@
-<%= user_gravatar(user, size: 150) %>
-<h3><%= link_to user.name, user, class: 'user-name' %></h3>
-<h5><%= user.email %></h5>
-<p>
-    <span class="label label-success"><%= pluralize(user.followers.count, 'follower') %></span>
-    <span class="label label-danger"><%= user.following.count %> following</span>
-</p>
+<%= user_gravatar(user, size: 80) %>
+<h5><%= link_to user.name, user, class: 'user-name' %></h5>
+<h6><%= user.email %></h6>
+<p><span class="label label-success"><%= pluralize(user.followers.count, 'follower') %></span></p>
+<p><span class="label label-danger"><%= user.following.count %> following</span></p>
