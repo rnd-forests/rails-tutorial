@@ -64,10 +64,12 @@
     .panel {
         box-shadow: none;
         border-radius: 0;
+        border: none;
 
         .panel-heading {
             border-radius: 0;
-            background-color: #31a480;
+            background-color: #1c242a;
+            border-bottom: none;
 
             h1 {
                 color: #ffffff;
@@ -99,19 +101,22 @@
 
         .panel-body {
             font-family: "source-sans-pro", sans-serif !important;
+            padding: 30px;
+
             img[style] {
                 width: 100% !important;
-                margin: 20px auto;
+                margin: 15px auto;
             }
 
             img {
                 width: 100%;
-                margin: 20px auto;
+                margin: 15px auto;
             }
         }
 
         .panel-footer {
             border-radius: 0;
+            border-top: none;
         }
     }
 

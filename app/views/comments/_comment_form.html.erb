@@ -2,8 +2,8 @@
     <div class="panel-heading">
         <div class="comment-stats">
             <span class="glyphicon glyphicon-stats"></span>
-            <span class="label label-danger"><%= pluralize(comments.count, 'comment') %></span>
-            <span class="label label-warning"><%= pluralize(authors.count, 'commenter') %></span>
+            <span class="label label-success"><%= pluralize(comments.count, 'comment') %></span>
+            <span class="label label-success"><%= pluralize(authors.count, 'commenter') %></span>
         </div>
     </div>
     <%= form_for(Comment.new, remote: true) do |f| %>

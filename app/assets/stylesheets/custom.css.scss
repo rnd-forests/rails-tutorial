@@ -154,19 +154,31 @@ input[type=file] {
 
 /* Navigation */
 .main-navigation {
-    background: #222222;
+    background: #283036;
     border-bottom: none;
 
     .navbar-brand {
         font-weight: bold;
-        color: #e74c3c;
+        color: #4bc970;
+    }
+
+    .navbar-nav > li {
+        border-left: 1px solid #444;
+
+        &:last-child {
+            border-right: 1px solid #444;
+        }
+
+        &:hover {
+            background-color: #1c242a;
+        }
     }
 
     .navbar-nav > li a {
         color: #fff;
 
         &:hover {
-            color: #e74c3c;
+            color: #4bc970;
         }
     }
 
@@ -181,30 +193,26 @@ input[type=file] {
 }
 
 
-/* Footer */
-.footer {
-    padding: 40px 0;
-    margin-top: 25px;
-    color: #777777;
-    text-align: center;
-    clear: both;
+/* Search form */
+#search-form {
+    margin: 20px 0;
 
-    .footer-links {
-        padding-left: 0;
-        margin-top: 20px;
-
-        li {
-            display: inline;
-            padding: 0 2px;
-        }
-
-        a {
-            color: #8c989e;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+    .form-control {
+        color: #384047;
+        font-size: 16px;
+        border: 1px solid #dbd9d9;
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+        box-shadow: none;
     }
+
+    .popover {
+        font-family: "source-sans-pro", sans-serif;
+    }
+}
+
+.search-keyword {
+    color: rgb(231, 76, 60);
 }
 
 
@@ -295,24 +303,28 @@ input[type=file] {
 }
 
 
-/* Search form */
-#search-form {
-    margin: 20px 0;
+/* Footer */
+.footer {
+    padding: 40px 0;
+    margin-top: 25px;
+    color: #777777;
+    text-align: center;
+    clear: both;
 
-    .form-control {
-        color: #384047;
-        font-size: 16px;
-        border: 1px solid #dbd9d9;
-        border-bottom-right-radius: 3px;
-        border-top-right-radius: 3px;
-        box-shadow: none;
+    .footer-links {
+        padding-left: 0;
+        margin-top: 20px;
+
+        li {
+            display: inline;
+            padding: 0 2px;
+        }
+
+        a {
+            color: #8c989e;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
-
-    .popover {
-        font-family: "source-sans-pro", sans-serif;
-    }
-}
-
-.search-keyword {
-    color: rgb(231, 76, 60);
 }
