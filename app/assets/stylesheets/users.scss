@@ -3,7 +3,6 @@
         border: none;
         border-radius: 0;
         padding: 20px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         text-align: center;
 
         .caption {
@@ -43,7 +42,6 @@
 .users-list {
     background-color: #ffffff;
     padding: 20px 0;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
      
     .user-block {
         text-align: center;
@@ -94,9 +92,16 @@
     .user-activities {
         .panel {
             font-size: 16px;
+            border: none;
+            box-shadow: none;
+
+            .panel-heading {
+                border-bottom: none;
+            }
 
             .panel-footer {
                 font-size: 14px;
+                border-top: none;
             }
 
             .article-author {

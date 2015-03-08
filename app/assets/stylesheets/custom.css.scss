@@ -1,11 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-/* @import "fonts"; */
 
 body {
-    font-family: "source-sans-pro", sans-serif;
-    font-size: 16px;
-    font-weight: normal;
+    font: normal 16px "source-sans-pro", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     background-color: #eaedef;
     color: #525252;
     padding-top: 60px;
@@ -19,6 +17,10 @@ a {
     &:hover, &:active, &:focus {
         text-decoration: none;
     }
+}
+
+li {
+    @include transition(all .2s ease);
 }
 
 .form-link {
@@ -36,7 +38,7 @@ input[type=file] {
 /* Twitter Bootstrap customizations */
 .form-group {
     label {
-        color: #222222;
+        color: #8d9aa5;
         font-weight: normal;
     }
 
@@ -47,7 +49,7 @@ input[type=file] {
     .form-control {
         color: #384047;
         font-size: 16px;
-        border: 1px solid #dbd9d9;
+        border: none;
         border-radius: 3px;
         box-shadow: none;
     }
@@ -58,34 +60,13 @@ input[type=file] {
 }
 
 .alert {
-    width: 75%;
-    margin: auto auto 25px;
-    border-radius: 0;
-    border: none;
+    margin-bottom: 25px;
+    border-radius: 3px;
     text-align: center;
 
     li {
         font-size: 14px;
         text-align: left;
-    }
-}
-
-.media-body {
-    color: #8c989e;
-
-    ul {
-        margin-top: 15px;
-        padding-left: 0;
-    }
-
-    li {
-        list-style: none;
-        font-size: 15px;
-        margin-bottom: 5px;
-
-        span {
-            padding-right: 5px;
-        }
     }
 }
 
@@ -97,13 +78,12 @@ input[type=file] {
     @include transition(all .5s ease);
 
     .list-group-item {
-        background: #ffffff;
+        border: none;
         color: #222222;
 
         &:hover {
             color: #ffffff;
-            background-color: rgb(231, 76, 60);
-            border-color: rgb(231, 76, 60);
+            background-color: #E74C3C;
         }
 
         &:hover .list-group-item-heading {
@@ -112,34 +92,27 @@ input[type=file] {
     }
 
     .list-group-item.active {
-        background-color: rgb(231, 76, 60);
-        border-color: rgb(231, 76, 60);
+        background-color: #E74C3C;
         color: #ffffff;
     }
 
     .badge {
-        background-color: rgb(231, 76, 60);
+        background-color: #E74C3C;
         font-weight: normal;
         font-size: 14px;
     }
 }
 
 .pagination {
-    border-radius: 0;
-
     li a {
         border: none;
         padding: 6px 14px;
-
-        &:first-child {
-            border-radius: 0;
-        }
     }
 }
 
 .tooltip {
     .tooltip-inner {
-        width: 150px;
+        width: 120px;
     }
 }
 
@@ -147,8 +120,12 @@ input[type=file] {
     box-shadow: none;
 
     .popover-content {
-        font-size: 16px;
+        font-size: 14px;
     }
+}
+
+.btn {
+    border: none;
 }
 
 
@@ -162,20 +139,12 @@ input[type=file] {
         color: #4bc970;
     }
 
-    .navbar-nav > li {
-        border-left: 1px solid #444;
-
-        &:last-child {
-            border-right: 1px solid #444;
-        }
-
-        &:hover {
-            background-color: #1c242a;
-        }
+    .navbar-nav > li:hover {
+        background-color: #1c242a;
     }
 
     .navbar-nav > li a {
-        color: #fff;
+        color: #ffffff;
 
         &:hover {
             color: #4bc970;
@@ -183,7 +152,7 @@ input[type=file] {
     }
 
     .dropdown ul li a {
-        color: #222;
+        color: #222222;
         font-size: 16px;
     }
 
@@ -196,14 +165,20 @@ input[type=file] {
 /* Search form */
 #search-form {
     margin: 20px 0;
+    padding: 0 8px;
 
     .form-control {
-        color: #384047;
         font-size: 16px;
-        border: 1px solid #dbd9d9;
+        border: none;
         border-bottom-right-radius: 3px;
         border-top-right-radius: 3px;
         box-shadow: none;
+    }
+
+    .input-group-addon {
+        background-color: #283036;
+        color: #ffffff;
+        border: none;
     }
 
     .popover {
@@ -212,14 +187,14 @@ input[type=file] {
 }
 
 .search-keyword {
-    color: rgb(231, 76, 60);
+    color: #E74C3C;
 }
 
 
 /* Section division */
 .section-title {
     color: #111111;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: center;
     font-weight: normal;
 }
@@ -227,20 +202,29 @@ input[type=file] {
 
 /* Sidebar */
 .sidebar {
-    padding-left: 15px;
-
     .sidebar-wrapper {
-        color: #8c989e;
         margin-bottom: 30px;
 
         .stats {
             background-color: #ffffff;
-            padding: 20px;
+            text-align: center;
+            padding: 15px;
+            border-radius: 4px;
 
             h1 {
-                margin: 0 0 10px;
                 font-weight: normal;
-                color: #E74C3C;
+
+                &:first-child {
+                    color: #68D387;
+                }
+
+                &:nth-child(2) {
+                    color: #A185C7;
+                }
+
+                &:nth-child(3) {
+                    color: #47C6E3;
+                }
             }
         }
 
@@ -259,6 +243,7 @@ input[type=file] {
             .list-group-item {
                 .list-group-item-heading {
                     font-size: 16px;
+                    font-weight: normal;
                 }
 
                 .list-group-item-text {
@@ -306,7 +291,6 @@ input[type=file] {
 /* Footer */
 .footer {
     padding: 40px 0;
-    margin-top: 25px;
     color: #777777;
     text-align: center;
     clear: both;
@@ -322,6 +306,7 @@ input[type=file] {
 
         a {
             color: #8c989e;
+
             &:hover {
                 text-decoration: underline;
             }
