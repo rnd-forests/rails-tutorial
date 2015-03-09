@@ -40,33 +40,24 @@
 }
 
 .users-list {
-    background-color: #ffffff;
-    padding: 50px 0;
-    border-radius: 4px;
-     
-    .user-block {
+    .list-group {
         text-align: center;
-        margin-bottom: 2em;
 
         img {
-            border-radius: 50%;
+            margin-bottom: 5px;
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+            padding: 4px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
 
-        .label {
-            font-weight: normal;
-            font-size: 13px;
-        }
-
-        .user-name {
-            color: #222222;
-
-            &:hover {
-                color: #e74c3c;
+        .list-group-item-text {
+            .label {
+                 font-weight: normal;
             }
-        }
-
-        h6 {
-            color: #8c989e;
         }
     }
 }
