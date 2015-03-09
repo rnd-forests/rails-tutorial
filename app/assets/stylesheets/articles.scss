@@ -4,6 +4,7 @@
         padding: 20px;
         background-color: #ffffff;
         overflow: visible;
+        border-radius: 4px;
 
         .media-body {
             overflow: visible;
@@ -62,7 +63,6 @@
 .article-wrapper {
     .panel {
         box-shadow: none;
-        border-radius: 0;
         border: none;
 
         .panel-heading {
