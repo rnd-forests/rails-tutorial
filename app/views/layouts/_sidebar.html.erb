@@ -2,9 +2,9 @@
     <div class="sidebar-wrapper">
         <p class="sidebar-header"><span class="glyphicon glyphicon-stats"></span>Statistics</p>
         <div class="stats">
-            <h1><%= pluralize(Article.all.count, 'article') %></h1>
-            <h1><%= pluralize(User.where(activated: true).count, 'member') %></h1>
-            <h1><%= pluralize(Comment.all.count, 'comment') %></h1>
+            <h2><%= pluralize(Article.all.count, 'article') %></h2>
+            <h2><%= pluralize(User.where(activated: true).count, 'member') %></h2>
+            <h2><%= pluralize(Comment.all.count, 'comment') %></h2>
         </div>
     </div>
     <div class="sidebar-wrapper">
