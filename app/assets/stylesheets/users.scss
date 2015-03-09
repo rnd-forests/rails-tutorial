@@ -1,7 +1,7 @@
 .user-sidebar {
     .thumbnail {
         border: none;
-        border-radius: 0;
+        border-radius: 4px;
         padding: 20px;
         text-align: center;
 
@@ -42,10 +42,15 @@
 .users-list {
     background-color: #ffffff;
     padding: 50px 0;
+    border-radius: 4px;
      
     .user-block {
         text-align: center;
         margin-bottom: 2em;
+
+        img {
+            border-radius: 50%;
+        }
 
         .label {
             font-weight: normal;

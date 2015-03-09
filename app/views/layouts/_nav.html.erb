@@ -13,11 +13,11 @@
         <div class="navbar-collapse collapse" id="app-nav">
             <ul class="nav navbar-nav">
                 <li><%= link_to 'Home', root_path %></li>
+                <li><%= link_to 'About', about_path %></li>
                 <% if logged_in? %>
-                    <li><%= link_to 'People', users_path %></li>
+                    <li><%= link_to 'Members', users_path %></li>
                     <li><%= link_to 'Tags', tags_path %></li>
                 <% end %>
-                <li><%= link_to 'About', about_path %></li>
                 <li><%= link_to 'Contact', contact_path %></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

@@ -1,9 +1,10 @@
 <% provide :title, 'Members' %>
+<h2 class="section-title">Current Rails Blogg Members</h2>
 <div class="users-list">
-    <% @users.in_groups_of(6, false).each do |users| %>
+    <% @users.in_groups_of(3, false).each do |users| %>
         <div class="row">
             <% users.each do |user| %>
-                <div class="col-md-2 user-block">
+                <div class="col-md-4 user-block">
                     <%= render user %>
                 </div>
             <% end %>
